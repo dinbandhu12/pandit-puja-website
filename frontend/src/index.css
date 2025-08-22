@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hindu Puja Services Design System - Spiritual & Divine Theme */
+
+@layer base {
+  :root {
+    /* Spiritual Background Colors */
+    --background: 45 100% 98%;
+    --foreground: 20 20% 15%;
+
+    /* Sacred Card Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 15%;
+
+    /* Sacred Saffron & Orange Theme */
+    --primary: 15 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 15 100% 75%;
+
+    /* Divine Gold Secondary */
+    --secondary: 45 95% 85%;
+    --secondary-foreground: 20 20% 15%;
+
+    /* Temple Colors */
+    --muted: 45 50% 95%;
+    --muted-foreground: 20 15% 45%;
+
+    --accent: 30 85% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Sacred Red for Destructive Actions */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Divine Borders */
+    --border: 45 30% 88%;
+    --input: 45 30% 90%;
+    --ring: 15 90% 55%;
+
+    /* Spiritual Gradients */
+    --gradient-sacred: linear-gradient(135deg, hsl(15 90% 55%), hsl(30 85% 70%));
+    --gradient-divine: linear-gradient(180deg, hsl(45 100% 98%), hsl(45 95% 85%));
+    --gradient-temple: linear-gradient(135deg, hsl(0 85% 65%), hsl(15 90% 55%));
+    --gradient-om: linear-gradient(45deg, hsl(30 85% 70%), hsl(45 95% 80%));
+
+    /* Sacred Shadows */
+    --shadow-divine: 0 10px 30px -10px hsl(15 90% 55% / 0.3);
+    --shadow-temple: 0 20px 50px -15px hsl(15 90% 55% / 0.4);
+    --shadow-sacred: 0 5px 20px -5px hsl(30 85% 70% / 0.25);
+
+    /* Smooth Divine Transitions */
+    --transition-sacred: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Temple Theme */
+    --background: 20 15% 8%;
+    --foreground: 45 95% 90%;
+
+    --card: 20 15% 10%;
+    --card-foreground: 45 95% 90%;
+
+    --popover: 20 15% 10%;
+    --popover-foreground: 45 95% 90%;
+
+    --primary: 15 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 15 100% 75%;
+
+    --secondary: 20 15% 15%;
+    --secondary-foreground: 45 95% 90%;
+
+    --muted: 20 15% 15%;
+    --muted-foreground: 45 30% 70%;
+
+    --accent: 30 85% 70%;
+    --accent-foreground: 20 15% 8%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 15% 20%;
+    --input: 20 15% 15%;
+    --ring: 15 90% 55%;
+
+    /* Dark Sacred Gradients */
+    --gradient-sacred: linear-gradient(135deg, hsl(15 90% 45%), hsl(30 85% 60%));
+    --gradient-divine: linear-gradient(180deg, hsl(20 15% 8%), hsl(20 15% 15%));
+    --gradient-temple: linear-gradient(135deg, hsl(0 75% 45%), hsl(15 90% 45%));
+    --gradient-om: linear-gradient(45deg, hsl(30 85% 60%), hsl(45 85% 70%));
+
+    --sidebar-background: 20 15% 8%;
+    --sidebar-foreground: 45 95% 90%;
+    --sidebar-primary: 15 90% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 15% 15%;
+    --sidebar-accent-foreground: 45 95% 90%;
+    --sidebar-border: 20 15% 20%;
+    --sidebar-ring: 15 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Sacred Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary)));
+  }
+}
+
+@layer components {
+  /* Sacred Animation Classes */
+  .animate-sacred-glow {
+    animation: sacred-glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-divine-float {
+    animation: divine-float 3s ease-in-out infinite;
+  }
+
+  .animate-om-pulse {
+    animation: om-pulse 2.5s ease-in-out infinite;
+  }
+
+  /* Sacred Hover Effects */
+  .hover-sacred {
+    transition: var(--transition-sacred);
+  }
+
+  .hover-sacred:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-temple);
+  }
+
+  .gradient-sacred {
+    background: var(--gradient-sacred);
+  }
+
+  .gradient-divine {
+    background: var(--gradient-divine);
+  }
+
+  .gradient-temple {
+    background: var(--gradient-temple);
+  }
+
+  .gradient-om {
+    background: var(--gradient-om);
+  }
+}
+
+@layer utilities {
+  .text-shadow-sacred {
+    text-shadow: 2px 2px 4px hsl(var(--primary) / 0.3);
+  }
+
+  .backdrop-blur-sacred {
+    backdrop-filter: blur(10px);
+    background: hsl(var(--background) / 0.9);
+  }
+}
+
+@keyframes sacred-glow {
+  0% {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--accent) / 0.5);
+  }
+}
+
+@keyframes divine-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes om-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
