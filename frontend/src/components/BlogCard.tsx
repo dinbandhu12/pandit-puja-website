@@ -136,6 +136,18 @@ export const BlogCard = ({ post, featured = false, className, onReadMore }: Blog
         </Badge>
       </div>
       
+      {post.tags && (
+        <div className="px-6 pt-4 pb-2">
+          <div className="flex flex-wrap gap-1">
+            {getTags(post.tags).map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-xs">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      )}
+      
       <CardHeader>
         <CardTitle className="text-xl group-hover:text-primary transition-colors line-clamp-2">
           {post.title}
@@ -181,16 +193,6 @@ export const BlogCard = ({ post, featured = false, className, onReadMore }: Blog
             <ArrowRight className="w-3 h-3 ml-1" />
           </Button>
         </div>
-
-        {post.tags && (
-          <div className="flex flex-wrap gap-1 mt-4">
-            {getTags(post.tags).map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-xs">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )}
       </CardContent>
     </Card>
   );

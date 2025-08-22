@@ -174,7 +174,7 @@ const About = () => {
                 alt="Traditional Hindu puja ceremony" 
                 className="rounded-2xl shadow-lg hover-sacred w-full h-[600px] object-cover"
               />
-              <div className="absolute -top-6 -left-6 bg-card rounded-xl p-6 shadow-lg border border-primary/20">
+              <div className="absolute -top-6 -right-6 bg-card rounded-xl p-6 shadow-lg border border-primary/20">
                 <img src={omSymbol} alt="Om Symbol" className="w-16 h-16 rounded-full mb-3" />
                 <p className="font-semibold text-foreground">Sacred Traditions</p>
                 <p className="text-sm text-muted-foreground">Since 2008</p>
