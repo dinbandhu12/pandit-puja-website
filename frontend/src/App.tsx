@@ -8,7 +8,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
-import Blog from "./pages/Blog";
+import BlogSimple from "./pages/BlogSimple";
 import BlogPostDetail from "./pages/BlogPostDetail";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -29,7 +29,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog" element={<BlogSimple />} />
             <Route path="/blog/:id" element={<BlogPostDetail />} />
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route path="/admin-blog-page" element={<AdminDashboard />} />
