@@ -2,8 +2,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useScrollToTop } from "@/hooks/useScrollToTop";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
 import About from "./pages/About";
@@ -23,9 +23,6 @@ const queryClient = new QueryClient({
       retryDelay: 1000,
       staleTime: 5 * 60 * 1000, // 5 minutes
       refetchOnWindowFocus: false,
-      onError: (error) => {
-        console.error('React Query error:', error);
-      },
     },
     mutations: {
       onError: (error) => {
@@ -35,14 +32,28 @@ const queryClient = new QueryClient({
   },
 });
 
-const AppContent = () => {
-  useScrollToTop(); // This will scroll to top on every route change
+// Separate component for scroll to top that's inside the Router context
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto'
+    });
+  }, [pathname]);
+
+  return null;
+};
+
+const AppContent = () => {
   return (
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Index />} />
