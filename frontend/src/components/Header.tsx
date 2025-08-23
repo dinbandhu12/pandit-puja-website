@@ -86,28 +86,28 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden mt-4 py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
+          <nav className="lg:hidden mt-4 py-6 border-t border-border">
+            <div className="flex flex-col items-center space-y-5">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(item.path) ? "text-primary" : "text-foreground"
+                  className={`text-lg font-semibold transition-colors hover:text-primary text-center py-2 px-4 rounded-lg hover:bg-primary/10 w-full max-w-xs ${
+                    isActive(item.path) ? "text-primary bg-primary/10" : "text-foreground"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border">
+              <div className="pt-6 border-t border-border w-full max-w-xs">
                 <Button 
                   variant="default" 
-                  className="w-full gradient-sacred"
+                  className="w-full gradient-sacred text-base py-3"
                   asChild
                 >
                   <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    <Phone className="w-4 h-4 mr-2" />
+                    <Phone className="w-5 h-5 mr-2" />
                     Book Puja - +91 620 647 1543
                   </Link>
                 </Button>
