@@ -21,18 +21,26 @@ let useDatabase = true;
 
 // Admin credentials (simple authentication)
 const ADMIN_CREDENTIALS = {
-  username: process.env.ADMIN_USERNAME || 'admin',
-  password: process.env.ADMIN_PASSWORD || 'admin'
+  username: process.env.ADMIN_USERNAME || 'website-admin',
+  password: process.env.ADMIN_PASSWORD || 'website-admin'
 };
 
 // Simple admin authentication middleware
 const adminAuth = (req, res, next) => {
   const { username, password } = req.body;
   
+  console.log('Admin auth attempt:', { 
+    received: { username, password }, 
+    expected: { username: ADMIN_CREDENTIALS.username, password: ADMIN_CREDENTIALS.password },
+    body: req.body 
+  });
+  
   if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+    console.log('Admin authentication successful');
     req.isAdmin = true;
     next();
   } else {
+    console.log('Admin authentication failed');
     res.status(401).json({ error: 'Invalid credentials' });
   }
 };
@@ -45,6 +53,13 @@ app.use(cors({
     : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:8080', process.env.FRONTEND_URL].filter(Boolean),
   credentials: true
 }));
+
+// Add request logging middleware
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.path} - Origin: ${req.headers.origin}`);
+  next();
+});
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
@@ -233,12 +248,14 @@ app.get('/api/posts/:id', async (req, res) => {
 // Create new post (admin only)
 app.post('/api/admin/posts', adminAuth, async (req, res) => {
   try {
+    console.log('Creating new post with data:', req.body);
     const { title, subtitle, content, tags, links, featuredImage } = req.body;
     
     // Convert empty string to null for database
     const imageUrl = featuredImage && featuredImage.trim() !== '' ? featuredImage : null;
     
     if (!title || !content) {
+      console.log('Validation failed: missing title or content');
       return res.status(400).json({ error: 'Title and content are required' });
     }
     

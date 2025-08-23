@@ -59,12 +59,14 @@ const AdminDashboard = () => {
 
   const handleCreatePost = async (postData: any) => {
     try {
+      console.log('AdminDashboard: Attempting to create post with data:', postData);
       const newPost = await apiService.createPost(postData);
+      console.log('AdminDashboard: Post created successfully:', newPost);
       toast.success('Post created successfully!');
       setShowEditor(false);
       await fetchPosts(); // Refresh the posts list
     } catch (error) {
-      console.error('Error creating post:', error);
+      console.error('AdminDashboard: Error creating post:', error);
       toast.error('Failed to create post. Please try again.');
     }
   };

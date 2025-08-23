@@ -47,7 +47,10 @@ class ApiService {
 
   // Get all blog posts
   async getPosts(): Promise<BlogPost[]> {
-    return this.request<BlogPost[]>('/posts');
+    console.log('API Service: Fetching posts from:', `${API_BASE_URL}/posts`);
+    const result = await this.request<BlogPost[]>('/posts');
+    console.log('API Service: Posts received:', result);
+    return result;
   }
 
   // Get single blog post by ID
@@ -61,8 +64,8 @@ class ApiService {
       method: 'POST',
       body: JSON.stringify({
         ...post,
-        username: 'admin',
-        password: 'admin'
+        username: 'website-admin',
+        password: 'website-admin'
       }),
     });
   }
@@ -73,8 +76,8 @@ class ApiService {
       method: 'PUT',
       body: JSON.stringify({
         ...post,
-        username: 'admin',
-        password: 'admin'
+        username: 'website-admin',
+        password: 'website-admin'
       }),
     });
   }
@@ -84,8 +87,8 @@ class ApiService {
     return this.request<{ message: string }>(`/admin/posts/${id}`, {
       method: 'DELETE',
       body: JSON.stringify({
-        username: 'admin',
-        password: 'admin'
+        username: 'website-admin',
+        password: 'website-admin'
       }),
     });
   }

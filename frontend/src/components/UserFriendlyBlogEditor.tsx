@@ -83,11 +83,13 @@ const UserFriendlyBlogEditor: React.FC<UserFriendlyBlogEditorProps> = ({
       content: editorRef.current.innerHTML
     };
 
+    console.log('UserFriendlyBlogEditor: Submitting post data:', finalData);
+
     setIsSubmitting(true);
     try {
       await onSave(finalData);
     } catch (error) {
-      console.error('Error saving post:', error);
+      console.error('UserFriendlyBlogEditor: Error saving post:', error);
       alert('Failed to save post. Please try again.');
     } finally {
       setIsSubmitting(false);

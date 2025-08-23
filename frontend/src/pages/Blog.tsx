@@ -49,6 +49,94 @@ const Blog = () => {
   const featuredPost = filteredPosts[0]; // First post as featured
   const regularPosts = filteredPosts.slice(1);
 
+  // Show error message if there's an API error
+  if (error) {
+    return (
+      <div className="min-h-screen py-16">
+        {/* Hero Section - Same as before */}
+        <section className="relative py-20 overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src={spiritualBlog} 
+              alt="Spiritual Knowledge and Wisdom" 
+              className="w-full h-full object-cover opacity-20"
+            />
+            <div className="absolute inset-0 gradient-divine"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+              <div className="flex items-center justify-center space-x-3 mb-4">
+                <Badge className="gradient-sacred text-white">Spiritual Blog</Badge>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate('/admin-login')}
+                  className="text-white hover:bg-white/20"
+                >
+                  <Settings className="w-4 h-4 mr-2" />
+                  Admin
+                </Button>
+              </div>
+              <h1 className="text-5xl font-bold text-foreground mb-6">
+                Sacred Wisdom & Insights
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Explore the rich traditions of Hindu culture, understand the significance of sacred rituals, 
+                and deepen your spiritual knowledge with our collection of authentic articles.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Error Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 text-center">
+            <div className="inline-flex items-center justify-center w-24 h-24 bg-red-100 rounded-full mb-8">
+              <FileText className="w-12 h-12 text-red-600" />
+            </div>
+            <h1 className="text-4xl font-bold text-foreground mb-4">Connection Issue</h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              We're experiencing a temporary connection issue. This could be because:
+            </p>
+            <div className="max-w-2xl mx-auto mb-8 text-left">
+              <ul className="text-muted-foreground space-y-2">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                  The backend server is not running
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                  Database connection issue
+                </li>
+                <li className="flex items-center">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                    Network configuration problem
+                  </li>
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => window.location.reload()} 
+                className="gradient-sacred hover-sacred"
+              >
+                Try Again
+              </Button>
+              <Button 
+                variant="outline"
+                onClick={() => navigate('/admin-login')}
+              >
+                <Settings className="w-4 h-4 mr-2" />
+                Check Admin Panel
+              </Button>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   // Show coming soon message when no posts and not loading
   if (!isLoading && (!posts || posts.length === 0)) {
     return (

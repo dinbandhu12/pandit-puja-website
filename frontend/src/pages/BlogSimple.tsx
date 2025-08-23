@@ -18,7 +18,7 @@ const BlogSimple = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const API_URL = import.meta.env.VITE_API_URL || 'https://web-production-81be.up.railway.app/api';
+        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
         const response = await fetch(`${API_URL}/posts`);
         
         if (!response.ok) {

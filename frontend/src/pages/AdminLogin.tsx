@@ -25,7 +25,7 @@ const AdminLogin = () => {
     setIsLoading(true);
 
     // Simple frontend authentication - no backend call needed
-    if (username === 'admin' && password === 'admin') {
+    if (username === 'website-admin' && password === 'website-admin') {
       // Simulate a small delay for better UX
       setTimeout(() => {
         toast.success('Login successful!');
@@ -37,7 +37,7 @@ const AdminLogin = () => {
       }, 500);
     } else {
       setIsLoading(false);
-      toast.error('Invalid credentials. Use admin/admin');
+      toast.error('Invalid credentials. Use website-admin/website-admin');
     }
   };
 
@@ -172,8 +172,8 @@ const AdminLogin = () => {
           <div className="mt-6 p-4 bg-muted/50 rounded-lg border border-border">
             <h3 className="font-medium text-foreground mb-2">Admin Credentials</h3>
             <p className="text-sm text-muted-foreground">
-              Username: <code className="bg-background px-1 rounded">admin</code><br />
-              Password: <code className="bg-background px-1 rounded">admin</code>
+              Username: <code className="bg-background px-1 rounded">website-admin</code><br />
+              Password: <code className="bg-background px-1 rounded">website-admin</code>
             </p>
             <p className="text-xs text-muted-foreground mt-2">
               This is a simple frontend authentication. No backend calls are made.
