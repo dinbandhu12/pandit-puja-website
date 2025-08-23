@@ -1,5 +1,12 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
+// Debug logging
+console.log('API Service initialized with:', {
+  VITE_API_URL: import.meta.env.VITE_API_URL,
+  API_BASE_URL: API_BASE_URL,
+  isProduction: import.meta.env.PROD
+});
+
 export interface BlogPost {
   id: number;
   title: string;
@@ -48,9 +55,14 @@ class ApiService {
   // Get all blog posts
   async getPosts(): Promise<BlogPost[]> {
     console.log('API Service: Fetching posts from:', `${API_BASE_URL}/posts`);
-    const result = await this.request<BlogPost[]>('/posts');
-    console.log('API Service: Posts received:', result);
-    return result;
+    try {
+      const result = await this.request<BlogPost[]>('/posts');
+      console.log('API Service: Posts received:', result);
+      return result;
+    } catch (error) {
+      console.error('API Service: Error fetching posts:', error);
+      throw error;
+    }
   }
 
   // Get single blog post by ID

@@ -13,6 +13,35 @@ const Blog = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string>("All Posts");
   const { data: posts, isLoading, error } = useBlogPosts();
+  
+  // Debug logging
+  console.log('Blog component state:', { 
+    posts: posts?.length || 0, 
+    isLoading, 
+    error: error?.message || 'No error',
+    hasData: !!posts,
+    postsData: posts
+  });
+  
+  // Debug environment
+  console.log('Environment variables:', {
+    VITE_API_URL: import.meta.env.VITE_API_URL,
+    NODE_ENV: import.meta.env.NODE_ENV
+  });
+  
+  // Manual test function
+  const testConnection = async () => {
+    try {
+      console.log('Testing connection to:', import.meta.env.VITE_API_URL);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/posts`);
+      const data = await response.json();
+      console.log('Connection test successful:', data);
+      alert(`Connection successful! Found ${data.length} posts.`);
+    } catch (error) {
+      console.error('Connection test failed:', error);
+      alert(`Connection failed: ${error.message}`);
+    }
+  };
 
   const handleReadMore = (post: BlogPost) => {
     navigate(`/blog/${post.id}`);
@@ -129,6 +158,13 @@ const Blog = () => {
               >
                 <Settings className="w-4 h-4 mr-2" />
                 Check Admin Panel
+              </Button>
+              <Button 
+                variant="outline"
+                onClick={testConnection}
+                className="bg-blue-500 text-white hover:bg-blue-600"
+              >
+                🔍 Test Connection
               </Button>
             </div>
           </div>

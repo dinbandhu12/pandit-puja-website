@@ -39,11 +39,20 @@ const BlogPostDetail = () => {
 
   const fetchPost = async (postId: number) => {
     try {
-      const response = await fetch(`http://localhost:3001/api/posts/${postId}`);
+      const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+      console.log('Fetching post with ID:', postId);
+      console.log('Using API URL:', API_BASE_URL);
+      
+      const response = await fetch(`${API_BASE_URL}/posts/${postId}`);
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
       if (response.ok) {
         const data = await response.json();
+        console.log('Post data received:', data);
         setPost(data);
       } else {
+        console.error('Response not ok:', response.status, response.statusText);
         toast.error('Post not found');
         navigate('/blog');
       }
