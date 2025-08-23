@@ -432,11 +432,11 @@ const Blog = () => {
 
       {/* Featured Post */}
       {!isLoading && featuredPost && (
-        <section className="py-20">
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="mb-12">
+            <div className="mb-8">
               <Badge className="mb-4 gradient-sacred text-white">Featured Article</Badge>
-              <h2 className="text-3xl font-bold text-foreground mb-8">Latest Insights</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6">Latest Insights</h2>
             </div>
             
             <BlogCard 
@@ -449,10 +449,10 @@ const Blog = () => {
       )}
 
       {/* Blog Posts Grid */}
-      <section className="py-20 gradient-divine">
+      <section className="py-16 gradient-divine">
         <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-8">Recent Articles</h2>
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-6">Recent Articles</h2>
             
             {/* Category Filters */}
             <div className="flex flex-wrap gap-3 mb-8">
@@ -474,7 +474,7 @@ const Blog = () => {
 
           {isLoading ? (
             // Loading skeletons
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {Array.from({ length: 6 }).map((_, index) => (
                 <BlogCardSkeleton key={index} />
               ))}
@@ -502,7 +502,7 @@ const Blog = () => {
             </div>
           ) : (
             // Blog posts grid
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {regularPosts.map((post) => (
                 <BlogCard 
                   key={post.id} 
