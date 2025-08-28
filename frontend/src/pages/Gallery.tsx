@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { X, Eye, Calendar, MapPin } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { X, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import heroTemple from "@/assets/hero-temple.jpg";
 import panditPuja from "@/assets/pandit-puja.jpg";
 import weddingCeremony from "@/assets/wedding-ceremony.jpg";
@@ -12,91 +11,112 @@ import omSymbol from "@/assets/om-symbol.jpg";
 import pujaGallery from "@/assets/puja-gallery.jpg";
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const galleryImages = [
     {
       id: 1,
-      src: heroTemple,
-      title: "Sacred Temple Architecture",
-      category: "Temples",
-      description: "Beautiful Hindu temple with golden domes and traditional architecture",
-      location: "Bangalore, Karnataka",
-      date: "2024-01-15"
+      src: "/images/Img_01.jpeg",
+      category: "Puja"
     },
     {
       id: 2,
-      src: panditPuja,
-      title: "Traditional Puja Ceremony",
-      category: "Ceremonies",
-      description: "Experienced pandit performing authentic Hindu rituals with devotion",
-      location: "Mumbai, Maharashtra",
-      date: "2024-01-20"
+      src: "/images/Img_02.jpeg",
+      category: "Puja"
     },
     {
       id: 3,
-      src: weddingCeremony,
-      title: "Sacred Wedding Ritual",
-      category: "Weddings",
-      description: "Traditional Hindu wedding ceremony with sacred fire and Vedic rituals",
-      location: "Delhi, India",
-      date: "2024-02-10"
+      src: "/images/Img_03.jpeg",
+      category: "Puja"
     },
     {
       id: 4,
-      src: ganeshPuja,
-      title: "Ganesh Chaturthi Celebration",
-      category: "Festivals",
-      description: "Devotees celebrating Ganesh Chaturthi with traditional decorations",
-      location: "Pune, Maharashtra",
-      date: "2024-02-15"
+      src: "/images/Img_04.jpeg",
+      category: "Puja"
     },
     {
       id: 5,
-      src: omSymbol,
-      title: "Sacred Om Symbol",
-      category: "Symbols",
-      description: "Golden Om symbol with lotus petals in spiritual mandala design",
-      location: "Varanasi, Uttar Pradesh",
-      date: "2024-02-20"
+      src: "/images/Img_05.jpeg",
+      category: "Puja"
     },
     {
       id: 6,
-      src: pujaGallery,
-      title: "Puja Room Setup",
-      category: "Ceremonies",
-      description: "Traditional puja room setup with all sacred items and decorations",
-      location: "Hyderabad, Telangana",
-      date: "2024-03-01"
+      src: "/images/Img_06.jpeg",
+      category: "Puja"
     },
     {
       id: 7,
-      src: heroTemple,
-      title: "Evening Temple Prayers",
-      category: "Temples",
-      description: "Beautiful temple illuminated during evening aarti ceremony",
-      location: "Chennai, Tamil Nadu",
-      date: "2024-03-05"
+      src: "/images/Satyanarayan_pooja.jpeg",
+      category: "Puja"
     },
     {
       id: 8,
-      src: weddingCeremony,
-      title: "Griha Pravesh Ceremony",
-      category: "Ceremonies",
-      description: "Family performing Griha Pravesh puja for their new home blessing",
-      location: "Kolkata, West Bengal",
-      date: "2024-03-10"
+      src: "/images/Grahpravesh.jpeg",
+      category: "Puja"
     },
     {
       id: 9,
+      src: "/images/Grah-pooja.jpeg",
+      category: "Puja"
+    },
+    {
+      id: 10,
+      src: "/images/Navgrah_pooja.jpeg",
+      category: "Puja"
+    },
+    {
+      id: 11,
+      src: "/images/rudraabhishek.jpeg",
+      category: "Puja"
+    },
+    
+    {
+      id: 12,
+      src: heroTemple,
+      category: "Temples"
+    },
+    {
+      id: 13,
+      src: panditPuja,
+      category: "Ceremonies"
+    },
+    {
+      id: 14,
+      src: weddingCeremony,
+      category: "Weddings"
+    },
+    {
+      id: 15,
       src: ganeshPuja,
-      title: "Festival Celebrations",
-      category: "Festivals",
-      description: "Community gathering for traditional festival celebrations",
-      location: "Ahmedabad, Gujarat",
-      date: "2024-03-15"
+      category: "Festivals"
+    },
+    {
+      id: 16,
+      src: omSymbol,
+      category: "Symbols"
+    },
+    {
+      id: 17,
+      src: pujaGallery,
+      category: "Ceremonies"
+    },
+    {
+      id: 18,
+      src: heroTemple,
+      category: "Temples"
+    },
+    {
+      id: 19,
+      src: weddingCeremony,
+      category: "Ceremonies"
+    },
+    {
+      id: 20,
+      src: ganeshPuja,
+      category: "Festivals"
     }
+    
   ];
 
   const categories = ["All", ...new Set(galleryImages.map(img => img.category))];
@@ -104,6 +124,26 @@ const Gallery = () => {
   const filteredImages = selectedCategory === "All" 
     ? galleryImages 
     : galleryImages.filter(img => img.category === selectedCategory);
+
+  const openImage = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const closeImage = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const nextImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex < filteredImages.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
+  const previousImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
 
   return (
     <div className="min-h-screen py-16">
@@ -147,58 +187,33 @@ const Gallery = () => {
           </div>
 
           <p className="text-center text-muted-foreground mb-8">
-            Click on any image to view in full size with details
+            Click on any image to view in full size
           </p>
         </div>
       </section>
 
-      {/* Gallery Grid */}
+      {/* Simple Gallery Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredImages.map((image) => (
-              <Card 
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {filteredImages.map((image, index) => (
+              <div 
                 key={image.id} 
-                className="overflow-hidden hover-sacred border-primary/20 cursor-pointer group"
-                onClick={() => setSelectedImage(image)}
+                className="relative group cursor-pointer overflow-hidden rounded-lg"
+                onClick={() => openImage(index)}
               >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={image.src} 
-                    alt={image.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-white font-semibold text-lg mb-2">{image.title}</h3>
-                      <div className="flex items-center justify-between text-white/80 text-sm">
-                        <div className="flex items-center">
-                          <MapPin className="w-4 h-4 mr-1" />
-                          {image.location}
-                        </div>
-                        <Eye className="w-5 h-5" />
-                      </div>
-                    </div>
-                  </div>
-                  <Badge className="absolute top-4 right-4 gradient-sacred text-white">
-                    {image.category}
-                  </Badge>
+                <img 
+                  src={image.src} 
+                  alt={image.category}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Eye className="w-8 h-8 text-white" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{image.title}</h3>
-                  <p className="text-muted-foreground mb-3">{image.description}</p>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-1" />
-                      {image.location}
-                    </div>
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-1" />
-                      {new Date(image.date).toLocaleDateString()}
-                    </div>
-                  </div>
-                </div>
-              </Card>
+                <Badge className="absolute top-2 right-2 gradient-sacred text-white text-xs">
+                  {image.category}
+                </Badge>
+              </div>
             ))}
           </div>
 
@@ -216,57 +231,57 @@ const Gallery = () => {
       </section>
 
       {/* Image Preview Modal */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-hidden p-0">
-          {selectedImage && (
+      <Dialog open={selectedImageIndex !== null} onOpenChange={closeImage}>
+        <DialogContent className="max-w-6xl w-full max-h-[95vh] overflow-hidden p-0 bg-black/20 border-0">
+          {selectedImageIndex !== null && (
             <>
-              <DialogHeader className="p-6 pb-0">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <DialogTitle className="text-2xl font-bold text-foreground mb-2">
-                      {selectedImage.title}
-                    </DialogTitle>
-                    <Badge className="gradient-sacred text-white">
-                      {selectedImage.category}
-                    </Badge>
-                  </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setSelectedImage(null)}
-                    className="h-8 w-8 p-0"
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
-                </div>
-              </DialogHeader>
-              
-              <div className="px-6">
+              {/* Header with close button */}
+              <div className="absolute top-6 right-6 z-10">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={closeImage}
+                  className="h-12 w-12 p-0 bg-white/20 hover:bg-white/30 text-white rounded-full"
+                >
+                  <X className="h-6 w-6" />
+                </Button>
+              </div>
+
+              {/* Navigation buttons */}
+              {selectedImageIndex > 0 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={previousImage}
+                  className="absolute left-8 top-1/2 transform -translate-y-1/2 h-14 w-14 p-0 bg-white/20 hover:bg-white/30 text-white rounded-full z-10"
+                >
+                  <ChevronLeft className="h-7 w-7" />
+                </Button>
+              )}
+
+              {selectedImageIndex < filteredImages.length - 1 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={nextImage}
+                  className="absolute right-8 top-1/2 transform -translate-y-1/2 h-14 w-14 p-0 bg-white/20 hover:bg-white/30 text-white rounded-full z-10"
+                >
+                  <ChevronRight className="h-7 w-7" />
+                </Button>
+              )}
+
+              {/* Image */}
+              <div className="flex items-center justify-center h-full p-12">
                 <img 
-                  src={selectedImage.src} 
-                  alt={selectedImage.title}
-                  className="w-full max-h-[60vh] object-contain rounded-lg"
+                  src={filteredImages[selectedImageIndex].src} 
+                  alt={filteredImages[selectedImageIndex].category}
+                  className="max-w-full max-h-full object-contain rounded-lg"
                 />
-                
-                <div className="py-6">
-                  <p className="text-muted-foreground mb-4 text-lg">
-                    {selectedImage.description}
-                  </p>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground border-t border-border pt-4">
-                    <div className="flex items-center">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      <span>{selectedImage.location}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span>{new Date(selectedImage.date).toLocaleDateString('en-IN', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}</span>
-                    </div>
-                  </div>
-                </div>
+              </div>
+
+              {/* Image counter */}
+              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm">
+                {selectedImageIndex + 1} of {filteredImages.length}
               </div>
             </>
           )}
