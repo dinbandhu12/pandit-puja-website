@@ -362,7 +362,7 @@ const Services = () => {
                 size="lg" 
                 variant="outline" 
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6 hover-sacred"
-                                 onClick={() => openWhatsAppConsultation("+91 770 962 5104")}
+                                 onClick={() => openWhatsAppConsultation("+91 987 654 3211")}
               >
                 Get Consultation
               </Button>
