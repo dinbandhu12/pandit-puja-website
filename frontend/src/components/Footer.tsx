@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 import omSymbol from "@/assets/om-symbol.jpg";
+import { initiatePhoneCall } from "@/utils/phoneUtils";
 
 const Footer = () => {
   return (
@@ -88,7 +89,13 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
                 <div>
-                  <p className="font-medium">+91 620 647 1543</p>
+                  <p 
+                    className="font-medium cursor-pointer hover:text-primary/80 transition-colors"
+                                         onClick={() => initiatePhoneCall("+91 987 654 3211")}
+                     title="Click to call +91 987 654 3211"
+                  >
+                                         +91 987 654 3211
+                  </p>
                   <p className="text-sm text-muted-foreground">Available 24/7</p>
                 </div>
               </div>

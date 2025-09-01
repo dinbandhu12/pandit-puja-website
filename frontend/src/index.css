@@ -153,9 +153,9 @@
 
 @layer components {
   /* Sacred Animation Classes */
-  .animate-sacred-glow {
+  /* .animate-sacred-glow {
     animation: sacred-glow 2s ease-in-out infinite alternate;
-  }
+  } */
 
   .animate-divine-float {
     animation: divine-float 3s ease-in-out infinite;

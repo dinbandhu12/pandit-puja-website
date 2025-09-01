@@ -9,6 +9,7 @@ import weddingCeremony from "@/assets/wedding-ceremony.jpg";
 import ganeshPuja from "@/assets/ganesh-puja.jpg";
 import omSymbol from "@/assets/om-symbol.jpg";
 import pujaGallery from "@/assets/puja-gallery.jpg";
+import { openWhatsAppChat } from "@/utils/whatsappUtils";
 
 const Gallery = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
@@ -299,7 +300,7 @@ const Gallery = () => {
               Book your puja ceremony with us and create beautiful sacred moments 
               for your family. Every ceremony is a divine celebration worth capturing.
             </p>
-            <Button className="gradient-sacred hover-sacred" size="lg">
+                         <Button className="gradient-sacred hover-sacred" size="lg" onClick={() => openWhatsAppChat("+91 987 654 3211")}>
               Book Your Ceremony
             </Button>
           </div>

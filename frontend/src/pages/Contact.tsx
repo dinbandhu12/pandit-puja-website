@@ -20,76 +20,37 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import omSymbol from "@/assets/om-symbol.jpg";
+import { initiatePhoneCall } from "@/utils/phoneUtils";
+import { openWhatsAppChat, openWhatsAppConsultation } from "@/utils/whatsappUtils";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    date: "",
-    location: "",
-    message: ""
-  });
-
-  const services = [
-    "Griha Pravesh Puja",
-    "Marriage Ceremony",
-    "Ganapathi Puja",
-    "Satyanarayan Puja",
-    "Rudrabhishek Puja",
-    "Navagraha Puja",
-    "Lakshmi Puja",
-    "Akhand Ramayan Path",
-    "Shradh Puja",
-    "Other - Please specify in message"
-  ];
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Form Submitted Successfully!",
-      description: "Thank you for contacting us. We'll get back to you within 2 hours.",
-      duration: 5000,
-    });
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      date: "",
-      location: "",
-      message: ""
-    });
-  };
 
   const quickActions = [
     {
       icon: Phone,
       title: "Call Directly",
       description: "Immediate assistance available",
-      action: "Call +91 620 647 1543",
-      variant: "primary"
+      action: "Call +91 987 654 3211",
+      variant: "primary",
+      onClick: () => initiatePhoneCall("+91 987 654 3211")
     },
     {
       icon: MessageCircle,
       title: "WhatsApp Chat",
       description: "Quick responses on WhatsApp",
       action: "Message Now",
-      variant: "secondary"
+      variant: "primary",
+      // variant: "secondary",
+      onClick: () => openWhatsAppChat("+91 987 654 3211")
     },
     {
       icon: Calendar,
       title: "Book Consultation",
       description: "Free spiritual consultation",
       action: "Schedule Meeting",
-      variant: "outline"
+      variant: "outline",
+      onClick: () => openWhatsAppConsultation("+91 987 654 3211")
     }
   ];
 
@@ -130,6 +91,7 @@ const Contact = () => {
                                action.variant === "secondary" ? "bg-accent hover:bg-accent/80" : 
                                "border-primary text-primary hover:bg-primary hover:text-white"}
                     variant={action.variant === "outline" ? "outline" : "default"}
+                    onClick={action.onClick}
                   >
                     {action.action}
                   </Button>
@@ -140,229 +102,120 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Contact Information */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <Badge className="mb-4 gradient-sacred text-white">Book Your Ceremony</Badge>
-              <h2 className="text-3xl font-bold text-foreground mb-6">
-                Request Your Sacred Service
-              </h2>
-              <p className="text-muted-foreground mb-8 text-lg">
-                Fill out the form below with your requirements, and our experienced pandits 
-                will contact you within 2 hours to discuss your ceremony details.
-              </p>
+          <div className="max-w-4xl mx-auto">
+            <Badge className="mb-4 gradient-sacred text-white">Get in Touch</Badge>
+            <h2 className="text-3xl font-bold text-foreground mb-6">
+              Contact Information
+            </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name" className="text-foreground font-medium">Full Name *</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Enter your full name"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
-                      className="mt-2 border-primary/30 focus:border-primary"
-                      required
-                    />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Primary Contact */}
+              <Card className="border-primary/20 hover-sacred">
+                <CardHeader>
+                  <CardTitle className="flex items-center text-primary">
+                    <Phone className="w-6 h-6 mr-3" />
+                    Direct Phone Line
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p 
+                    className="text-2xl font-bold text-foreground mb-2 cursor-pointer hover:text-primary transition-colors"
+                    onClick={() => initiatePhoneCall("+91 987 654 3211")}
+                    title="Click to call +91 987 654 3211"
+                  >
+                    +91 987 654 3211
+                  </p>
+                  <p className="text-muted-foreground">Available 24/7 for immediate assistance</p>
+                  <p className="text-sm text-primary mt-2">Best for urgent bookings and consultations</p>
+                </CardContent>
+              </Card>
+
+              {/* Email Contact */}
+              <Card className="border-primary/20 hover-sacred">
+                <CardHeader>
+                  <CardTitle className="flex items-center text-primary">
+                    <Mail className="w-6 h-6 mr-3" />
+                    Email Address
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg font-semibold text-foreground mb-2">info@divinepuja.com</p>
+                  <p className="text-muted-foreground">We respond within 2 hours</p>
+                  <p className="text-sm text-primary mt-2">Best for detailed ceremony planning</p>
+                </CardContent>
+              </Card>
+
+              {/* Service Areas */}
+              <Card className="border-primary/20 hover-sacred">
+                <CardHeader>
+                  <CardTitle className="flex items-center text-primary">
+                    <MapPin className="w-6 h-6 mr-3" />
+                    Service Areas
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg font-semibold text-foreground mb-2">Primary: Bangalore, Karnataka</p>
+                  <p className="text-muted-foreground mb-3">Serving across South India</p>
+                  <div className="space-y-1 text-sm text-muted-foreground">
+                    <p>• Chennai, Hyderabad, Pune, Mumbai</p>
+                    <p>• Delhi NCR, Kolkata, Ahmedabad</p>
+                    <p>• Video consultation available nationwide</p>
                   </div>
-                  <div>
-                    <Label htmlFor="phone" className="text-foreground font-medium">Phone Number *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+91 98765 43210"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="mt-2 border-primary/30 focus:border-primary"
-                      required
-                    />
-                  </div>
-                </div>
+                </CardContent>
+              </Card>
 
-                <div>
-                  <Label htmlFor="email" className="text-foreground font-medium">Email Address</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="mt-2 border-primary/30 focus:border-primary"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="service" className="text-foreground font-medium">Service Required *</Label>
-                    <Select value={formData.service} onValueChange={(value) => handleInputChange("service", value)}>
-                      <SelectTrigger className="mt-2 border-primary/30 focus:border-primary">
-                        <SelectValue placeholder="Select a service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {services.map((service) => (
-                          <SelectItem key={service} value={service}>
-                            {service}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="date" className="text-foreground font-medium">Preferred Date</Label>
-                    <Input
-                      id="date"
-                      type="date"
-                      value={formData.date}
-                      onChange={(e) => handleInputChange("date", e.target.value)}
-                      className="mt-2 border-primary/30 focus:border-primary"
-                      min={new Date().toISOString().split('T')[0]}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <Label htmlFor="location" className="text-foreground font-medium">Service Location *</Label>
-                  <Input
-                    id="location"
-                    type="text"
-                    placeholder="Full address where service is needed"
-                    value={formData.location}
-                    onChange={(e) => handleInputChange("location", e.target.value)}
-                    className="mt-2 border-primary/30 focus:border-primary"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="message" className="text-foreground font-medium">Additional Details</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Please share any specific requirements, family traditions, or questions you have..."
-                    value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
-                    className="mt-2 border-primary/30 focus:border-primary min-h-[120px]"
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  className="w-full gradient-sacred hover-sacred text-lg py-6"
-                  size="lg"
-                >
-                  <Send className="w-5 h-5 mr-2" />
-                  Submit Request
-                </Button>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div>
-              <Badge className="mb-4 gradient-sacred text-white">Get in Touch</Badge>
-              <h2 className="text-3xl font-bold text-foreground mb-6">
-                Contact Information
-              </h2>
-
-              <div className="space-y-8">
-                {/* Primary Contact */}
-                <Card className="border-primary/20 hover-sacred">
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-primary">
-                      <Phone className="w-6 h-6 mr-3" />
-                      Direct Phone Line
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-2xl font-bold text-foreground mb-2">+91 620 647 1543</p>
-                    <p className="text-muted-foreground">Available 24/7 for immediate assistance</p>
-                    <p className="text-sm text-primary mt-2">Best for urgent bookings and consultations</p>
-                  </CardContent>
-                </Card>
-
-                {/* Email Contact */}
-                <Card className="border-primary/20 hover-sacred">
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-primary">
-                      <Mail className="w-6 h-6 mr-3" />
-                      Email Address
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg font-semibold text-foreground mb-2">info@divinepuja.com</p>
-                    <p className="text-muted-foreground">We respond within 2 hours</p>
-                    <p className="text-sm text-primary mt-2">Best for detailed ceremony planning</p>
-                  </CardContent>
-                </Card>
-
-                {/* Service Areas */}
-                <Card className="border-primary/20 hover-sacred">
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-primary">
-                      <MapPin className="w-6 h-6 mr-3" />
-                      Service Areas
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-lg font-semibold text-foreground mb-2">Primary: Bangalore, Karnataka</p>
-                    <p className="text-muted-foreground mb-3">Serving across South India</p>
-                    <div className="space-y-1 text-sm text-muted-foreground">
-                      <p>• Chennai, Hyderabad, Pune, Mumbai</p>
-                      <p>• Delhi NCR, Kolkata, Ahmedabad</p>
-                      <p>• Video consultation available nationwide</p>
+              {/* Operating Hours */}
+              <Card className="border-primary/20 hover-sacred">
+                <CardHeader>
+                  <CardTitle className="flex items-center text-primary">
+                    <Clock className="w-6 h-6 mr-3" />
+                    Operating Hours
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Monday - Sunday:</span>
+                      <span className="font-semibold text-foreground">24/7 Available</span>
                     </div>
-                  </CardContent>
-                </Card>
-
-                {/* Operating Hours */}
-                <Card className="border-primary/20 hover-sacred">
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-primary">
-                      <Clock className="w-6 h-6 mr-3" />
-                      Operating Hours
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Monday - Sunday:</span>
-                        <span className="font-semibold text-foreground">24/7 Available</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Emergency Services:</span>
-                        <span className="font-semibold text-foreground">Anytime</span>
-                      </div>
-                      <p className="text-sm text-primary mt-2">
-                        We understand that spiritual needs don't follow schedules
-                      </p>
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Emergency Services:</span>
+                      <span className="font-semibold text-foreground">Anytime</span>
                     </div>
-                  </CardContent>
-                </Card>
-
-                {/* Consultation Info */}
-                <Card className="gradient-divine border-primary/20">
-                  <CardContent className="pt-6">
-                    <div className="flex items-center mb-4">
-                      <img src={omSymbol} alt="Om Symbol" className="w-12 h-12 rounded-full mr-4" />
-                      <div>
-                        <h3 className="text-lg font-semibold text-foreground">Free Consultation</h3>
-                        <p className="text-muted-foreground">No obligation spiritual guidance</p>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground mb-4">
-                      Get personalized advice on the best ceremonies for your family's needs, 
-                      auspicious timing, and traditional requirements.
+                    <p className="text-sm text-primary mt-2">
+                      We understand that spiritual needs don't follow schedules
                     </p>
-                    <Button className="w-full gradient-sacred hover-sacred">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      Schedule Free Consultation
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
+
+            {/* Consultation Info - Full Width */}
+            <Card className="gradient-divine border-primary/20 mt-8">
+              <CardContent className="pt-6">
+                <div className="flex items-center mb-4">
+                  <img src={omSymbol} alt="Om Symbol" className="w-12 h-12 rounded-full mr-4" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">Free Consultation</h3>
+                    <p className="text-muted-foreground">No obligation spiritual guidance</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Get personalized advice on the best ceremonies for your family's needs, 
+                  auspicious timing, and traditional requirements.
+                </p>
+                <Button 
+                  className="w-full gradient-sacred hover-sacred"
+                  onClick={() => openWhatsAppConsultation("+91 987 654 3211")}
+                >
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Schedule Free Consultation
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

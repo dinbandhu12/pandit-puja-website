@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Button } from "./ui/button";
 import { LucideIcon } from "lucide-react";
+import { openWhatsAppServiceInquiry } from "@/utils/whatsappUtils";
 
 interface ServiceCardProps {
   title: string;
@@ -60,7 +61,10 @@ const ServiceCard = ({
             ))}
           </ul>
         </div>
-        <Button className="w-full gradient-sacred hover-sacred">
+        <Button 
+          className="w-full gradient-sacred hover-sacred"
+          onClick={() => openWhatsAppServiceInquiry("+91 987 654 3211", title)}
+        >
           Book This Puja
         </Button>
       </CardContent>

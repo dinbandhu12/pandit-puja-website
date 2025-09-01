@@ -22,6 +22,7 @@ import heroTemple from "@/assets/hero-temple.jpg";
 import panditPuja from "@/assets/pandit-puja.jpg";
 import weddingCeremony from "@/assets/wedding-ceremony.jpg";
 import ganeshPuja from "@/assets/ganesh-puja.jpg";
+import { initiatePhoneCall } from "@/utils/phoneUtils";
 
 const Index = () => {
   const featuredServices = [
@@ -136,12 +137,10 @@ const Index = () => {
               size="lg" 
               variant="outline" 
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6 hover-sacred"
-              asChild
+              onClick={() => initiatePhoneCall("+91 620 647 1543")}
             >
-              <Link to="/contact">
-                <Phone className="mr-2 h-5 w-5" />
-                Book Now: +91 620 647 1543
-              </Link>
+              <Phone className="mr-2 h-5 w-5" />
+              Book Now: +91 987 654 3211
             </Button>
           </div>
         </div>
@@ -259,11 +258,13 @@ const Index = () => {
               are available 24/7 to bring sacred rituals to your home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gradient-sacred hover-sacred text-lg px-8 py-6" asChild>
-                <Link to="/contact">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call +91 620 647 1543
-                </Link>
+              <Button 
+                size="lg" 
+                className="gradient-sacred hover-sacred text-lg px-8 py-6"
+                onClick={() => initiatePhoneCall("+91 987 654 3211")}
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                                 Call +91 987 654 3211
               </Button>
               <Button 
                 size="lg" 
