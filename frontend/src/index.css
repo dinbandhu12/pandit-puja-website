@@ -132,6 +132,11 @@
     @apply bg-background text-foreground font-sans;
   }
 
+  /* Apply Open Sans to all heading elements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
   /* Sacred Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;

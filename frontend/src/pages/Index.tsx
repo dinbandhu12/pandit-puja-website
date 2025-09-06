@@ -112,7 +112,8 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-sacred animate-divine-float">
+          {/* <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-sacred animate-divine-float"> */}
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-sacred">
             Divine Puja Services
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-shadow-sacred">
