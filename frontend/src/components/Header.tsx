@@ -13,7 +13,6 @@ const Header = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Gallery", path: "/gallery" },
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" },
   ];
@@ -70,7 +69,7 @@ const Header = () => {
             </div>
             <Button 
               variant="default" 
-              className="gradient-sacred hover-sacred"
+              className="gradient-sacred-btn hover-sacred"
               asChild
             >
               <Link to="/contact">
@@ -110,7 +109,7 @@ const Header = () => {
               <div className="pt-6 border-t border-border w-full max-w-xs">
                 <Button 
                   variant="default" 
-                  className="w-full gradient-sacred text-base py-3"
+                  className="w-full gradient-sacred-btn text-base py-3"
                   onClick={() => {
                     setIsMenuOpen(false);
                                          initiatePhoneCall("+91 987 654 3211");

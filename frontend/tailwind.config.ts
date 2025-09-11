@@ -66,7 +66,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				sacred: 'var(--sacred)',
+				divine: 'var(--divine)',
+				temple: 'var(--temple)',
+				om: 'var(--om)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -102,7 +102,7 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">About Us</Badge>
-            <h1 className="text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-5xl font-bold text-sacred mb-6">
               Preserving Sacred Traditions
             </h1>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -131,27 +131,27 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-4 gradient-sacred text-white">Our Journey</Badge>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-4xl font-bold text-sacred mb-6">
                 A Legacy of Sacred Service
               </h2>
               <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  Divine Puja Services was founded with a simple yet profound mission: to make authentic 
-                  Hindu religious ceremonies accessible to families across India. Our journey began in 
-                  Bangalore over 15 years ago when our founder, Pandit Ramesh Sharma, recognized the need 
-                  for traditional North Indian Hindi pandits in South India.
+                  I am <span className="font-bold text-primary">Pandit Abhay Kirthikumar Sharma</span>, son of Swargiya Pandit Kirthikumar Sharma (Shingrani) 
+                  and grandson of Swargiya Pandit Neelkanth Govardhan Lal Sharma (Shingrani). I come from a 
+                  proud lineage of devoted priests and scholars of Sanatan Dharma, who dedicated their lives 
+                  to upholding Vedic traditions and guiding families in dharmic living.
                 </p>
                 <p>
-                  Born and raised in Varanasi, the spiritual capital of India, Pandit Sharma completed 
-                  his studies in Sanskrit literature and Vedic scriptures at the prestigious Banaras 
-                  Hindu University. His deep understanding of ancient traditions, combined with his 
-                  ability to explain complex rituals in simple terms, quickly made him a beloved 
-                  figure among devotees.
+                  Blessed with this sacred heritage, I have continued the path of my forefathers serving 
+                  society through authentic Vedic rituals, samskara, and kathas. Trained under senior Acharyas, 
+                  I perform a wide range of ceremonies including Griha Pravesh, Vivah (weddings), Satyanarayan 
+                  Puja, Naamkaran, Annaprashan, Shraddha, and festival observances, always with a focus on 
+                  devotion, clarity, and scriptural correctness.
                 </p>
-                <p>
-                  Today, our team consists of learned pandits who have dedicated their lives to 
-                  preserving and practicing Hindu dharma. Each member of our team brings years of 
-                  experience and a genuine commitment to serving families with devotion and authenticity.
+                <p className="italic">
+                  "My mission is to preserve the essence of Sanatan Dharma and make rituals meaningful and 
+                  accessible for today's families. Whether at home, temple, or through guided online ceremonies, 
+                  I strive to ensure every puja becomes a spiritual experience that connects families to the divine."
                 </p>
               </div>
               <div className="mt-8 space-y-4">
@@ -189,7 +189,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Our Values</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-sacred mb-6">
               What Guides Our Service
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -219,7 +219,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 gradient-sacred text-white">Our Philosophy</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-sacred mb-6">
               Dharma, Devotion, and Service
             </h2>
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
@@ -241,7 +241,7 @@ const About = () => {
                 appropriate spiritual atmosphere and traditional authenticity that your family deserves.
               </p>
             </div>
-            <Button className="mt-8 gradient-sacred hover-sacred" size="lg" asChild>
+            <Button className="mt-8 gradient-sacred-btn hover-sacred" size="lg" asChild>
               <Link to="/contact">Connect With Our Team</Link>
             </Button>
           </div>
@@ -253,7 +253,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Devotee Experiences</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-sacred mb-6">
               Blessed Families Share Their Stories
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -269,7 +269,7 @@ const About = () => {
           </div>
 
           <div className="text-center">
-            <Button className="gradient-sacred hover-sacred" size="lg" asChild>
+            <Button className="gradient-sacred-btn hover-sacred" size="lg" asChild>
               <Link to="/services">Explore Our Services</Link>
             </Button>
           </div>

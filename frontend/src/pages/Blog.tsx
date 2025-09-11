@@ -106,7 +106,7 @@ const Blog = () => {
                   Admin
                 </Button>
               </div>
-              <h1 className="text-5xl font-bold text-foreground mb-6">
+              <h1 className="text-5xl font-bold text-sacred mb-6">
                 Sacred Wisdom & Insights
               </h1>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -123,7 +123,7 @@ const Blog = () => {
             <div className="inline-flex items-center justify-center w-24 h-24 bg-red-100 rounded-full mb-8">
               <FileText className="w-12 h-12 text-red-600" />
             </div>
-            <h1 className="text-4xl font-bold text-foreground mb-4">Connection Issue</h1>
+            <h1 className="text-4xl font-bold text-sacred mb-4">Connection Issue</h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               We're experiencing a temporary connection issue. This could be because:
             </p>
@@ -148,7 +148,7 @@ const Blog = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 onClick={() => window.location.reload()} 
-                className="gradient-sacred hover-sacred"
+                className="gradient-sacred-btn hover-sacred"
               >
                 Try Again
               </Button>
@@ -201,7 +201,7 @@ const Blog = () => {
                   Admin
                 </Button>
               </div>
-              <h1 className="text-5xl font-bold text-foreground mb-6">
+              <h1 className="text-5xl font-bold text-sacred mb-6">
                 Sacred Wisdom & Insights
               </h1>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -219,7 +219,7 @@ const Blog = () => {
               <div className="inline-flex items-center justify-center w-24 h-24 bg-primary/10 rounded-full mb-8">
                 <FileText className="w-12 h-12 text-primary" />
               </div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-4xl font-bold text-sacred mb-6">
                 Blog Coming Soon!
               </h2>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -266,7 +266,7 @@ const Blog = () => {
                 </p>
                 <Button 
                   onClick={() => navigate('/admin-login')} 
-                  className="gradient-sacred hover-sacred"
+                  className="gradient-sacred-btn hover-sacred"
                 >
                   <Settings className="w-4 h-4 mr-2" />
                   Admin Dashboard
@@ -281,7 +281,7 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
               <Badge className="mb-4 gradient-sacred text-white">Stay Connected</Badge>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-4xl font-bold text-sacred mb-6">
                 Get Notified When We Launch
               </h2>
               <p className="text-xl text-muted-foreground mb-8">
@@ -335,7 +335,7 @@ const Blog = () => {
                   Admin
                 </Button>
               </div>
-              <h1 className="text-5xl font-bold text-foreground mb-6">
+              <h1 className="text-5xl font-bold text-sacred mb-6">
                 Sacred Wisdom & Insights
               </h1>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -352,7 +352,7 @@ const Blog = () => {
             <div className="inline-flex items-center justify-center w-24 h-24 bg-red-100 rounded-full mb-8">
               <FileText className="w-12 h-12 text-red-600" />
             </div>
-            <h1 className="text-4xl font-bold text-foreground mb-4">Connection Issue</h1>
+            <h1 className="text-4xl font-bold text-sacred mb-4">Connection Issue</h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               We're experiencing a temporary connection issue. This could be because:
             </p>
@@ -375,7 +375,7 @@ const Blog = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 onClick={() => window.location.reload()} 
-                className="gradient-sacred hover-sacred"
+                className="gradient-sacred-btn hover-sacred"
               >
                 Try Again
               </Button>
@@ -436,7 +436,7 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             <div className="mb-8">
               <Badge className="mb-4 gradient-sacred text-white">Featured Article</Badge>
-              <h2 className="text-3xl font-bold text-foreground mb-6">Latest Insights</h2>
+              <h2 className="text-3xl font-bold text-sacred mb-6">Latest Insights</h2>
             </div>
             
             <BlogCard 
@@ -452,7 +452,7 @@ const Blog = () => {
       <section className="py-16 gradient-divine">
         <div className="container mx-auto px-4">
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-foreground mb-6">Recent Articles</h2>
+            <h2 className="text-3xl font-bold text-sacred mb-6">Recent Articles</h2>
             
             {/* Category Filters */}
             <div className="flex flex-wrap gap-3 mb-8">
@@ -482,7 +482,7 @@ const Blog = () => {
           ) : filteredPosts.length === 0 ? (
             // No posts found
             <div className="text-center py-16">
-              <h3 className="text-2xl font-semibold text-foreground mb-4">
+              <h3 className="text-2xl font-semibold text-sacred mb-4">
                 No posts found
               </h3>
               <p className="text-muted-foreground mb-8">
@@ -528,7 +528,7 @@ const Blog = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <Badge className="mb-4 gradient-sacred text-white">Stay Connected</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-sacred mb-6">
               Get Spiritual Insights in Your Inbox
             </h2>
             <p className="text-xl text-muted-foreground mb-8">

@@ -7,7 +7,6 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: LucideIcon;
-  price: string;
   duration: string;
   features: string[];
   image?: string;
@@ -17,7 +16,6 @@ const ServiceCard = ({
   title, 
   description, 
   icon: Icon, 
-  price, 
   duration, 
   features,
   image 
@@ -38,7 +36,6 @@ const ServiceCard = ({
         <div className="flex items-center justify-between">
           <Icon className="w-10 h-10 text-primary animate-sacred-glow" />
           <div className="text-right">
-            <p className="text-2xl font-bold text-primary">{price}</p>
             <p className="text-sm text-muted-foreground">{duration}</p>
           </div>
         </div>
@@ -62,7 +59,7 @@ const ServiceCard = ({
           </ul>
         </div>
         <Button 
-          className="w-full gradient-sacred hover-sacred"
+          className="w-full gradient-sacred-btn hover-sacred"
           onClick={() => openWhatsAppServiceInquiry("+91 987 654 3211", title)}
         >
           Book This Puja

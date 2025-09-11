@@ -34,157 +34,196 @@ const Services = () => {
 
   const allServices = [
     {
-      title: "Griha Pravesh Puja",
-      description: "Traditional house warming ceremony to bless your new home with prosperity, peace, and positive energy according to Vastu principles.",
+      title: "Online Pooja Services",
+      description: "Performed live and guided through digital platforms, ensuring that families across the globe can connect with the divine from their homes.",
       icon: Home,
-      price: "₹3,500",
-      duration: "2-3 hours",
+      duration: "1-3 hours",
       features: [
-        "Complete puja materials included",
-        "Authentic Sanskrit mantras",
-        "Vastu corrections if needed",
-        "Prasadam for family",
-        "Home blessing ritual",
-        "Ganesh puja for obstacle removal"
+        "Satyanarayan Katha",
+        "Namkaran (Naming Ceremony)",
+        "Ganapati/Ganesh Pooja",
+        "Live digital guidance",
+        "Interactive sessions",
+        "Global accessibility"
       ],
       image: heroTemple,
-      category: "Home Ceremonies"
+      category: "Online Services"
     },
     {
-      title: "Marriage Puja (Vivah)",
-      description: "Sacred wedding ceremonies performed with authentic Vedic rituals for a blessed and harmonious married life.",
+      title: "Consultation",
+      description: "Guidance rooted in tradition and calculation to bring balance and prosperity.",
       icon: Heart,
-      price: "₹15,000",
-      duration: "4-6 hours",
+      duration: "30-60 minutes",
       features: [
-        "Complete wedding ceremony",
-        "Sacred fire ritual (Hawan)",
-        "Saptapadi (Seven vows)",
-        "Mangalsutra ceremony",
-        "Traditional customs",
-        "Family blessing rituals"
+        "Numerology Consultation",
+        "Personal guidance",
+        "Traditional calculations",
+        "Prosperity guidance",
+        "Life path analysis",
+        "Spiritual counseling"
       ],
       image: omSymbol,
-      category: "Life Events"
+      category: "Consultation"
     },
     {
-      title: "Ganapathi Puja",
-      description: "Remove obstacles and invite prosperity with authentic Lord Ganesha worship rituals for new beginnings.",
+      title: "Griha Pravesh Pooja",
+      description: "Traditional house warming ceremony to bless your new home with prosperity, peace, and positive energy.",
       icon: Crown,
-      price: "₹2,500",
-      duration: "1-2 hours",
-      features: [
-        "Ganesha idol arrangement",
-        "21 types of offerings",
-        "Modak prasadam",
-        "Special Ganesha mantras",
-        "Obstacle removal ritual",
-        "Success and prosperity blessings"
-      ],
-      image: spiritualBlog,
-      category: "Deity Worship"
-    },
-    {
-      title: "Satyanarayan Puja",
-      description: "Monthly spiritual ceremony dedicated to Lord Vishnu for family welfare, prosperity, and divine blessings.",
-      icon: Star,
-      price: "₹2,000",
       duration: "2-3 hours",
       features: [
-        "Complete puja setup",
-        "Satyanarayan Katha reading",
-        "Panchamrit preparation",
-        "Family participation guidance",
-        "Blessed prasadam",
-        "Monthly puja scheduling"
+        "Complete puja materials",
+        "Vastu Shanti Pooja",
+        "Home blessing ritual",
+        "Sanskrit mantras",
+        "Prasadam included",
+        "Family participation"
       ],
-      image: panditPuja,
-      category: "Regular Worship"
+      image: spiritualBlog,
+      category: "Offline Services"
     },
     {
-      title: "Rudrabhishek Puja",
-      description: "Powerful Lord Shiva worship ceremony for health, peace, and spiritual upliftment with sacred abhishek rituals.",
+      title: "Mahaganapathi Homa / Havan",
+      description: "Sacred fire ritual dedicated to Lord Ganesha for obstacle removal and new beginnings.",
+      icon: Star,
+      duration: "2-4 hours",
+      features: [
+        "Sacred fire ceremony",
+        "Ganesha mantras",
+        "Havan materials",
+        "Blessings for success",
+        "Obstacle removal",
+        "Prosperity enhancement"
+      ],
+      image: panditPuja,
+      category: "Offline Services"
+    },
+    {
+      title: "Rudrabhishek",
+      description: "Powerful Lord Shiva worship ceremony for health, peace, and spiritual upliftment.",
       icon: Flame,
-      price: "₹4,000",
       duration: "2-4 hours",
       features: [
         "Shiva Linga abhishek",
         "Rudram chanting",
         "Sacred water offerings",
-        "Bilva leaves arrangement",
-        "Health and peace blessings",
-        "Spiritual purification"
+        "Health blessings",
+        "Spiritual purification",
+        "Peace and harmony"
       ],
       image: weddingCeremony,
-      category: "Deity Worship"
+      category: "Offline Services"
     },
     {
-      title: "Navagraha Puja",
-      description: "Nine planetary worship ceremony to reduce negative planetary effects and enhance positive cosmic influences.",
+      title: "Griha Shanti Havan",
+      description: "Sacred fire ceremony for peace, prosperity, and harmony in your home and family.",
       icon: Sun,
-      price: "₹5,000",
-      duration: "3-4 hours",
+      duration: "2-3 hours",
       features: [
-        "Nine planet worship",
-        "Specific mantras for each graha",
-        "Gemstone recommendations",
-        "Astrological guidance",
-        "Planetary peace rituals",
-        "Cosmic harmony restoration"
+        "Peace rituals",
+        "Family harmony",
+        "Sacred fire ceremony",
+        "Vedic mantras",
+        "Prosperity blessings",
+        "Home purification"
       ],
       image: ganeshPuja,
-      category: "Astrological"
+      category: "Offline Services"
     },
     {
-      title: "Lakshmi Puja",
-      description: "Goddess Lakshmi worship for wealth, prosperity, and abundance in business and personal life.",
+      title: "Mahamrityunjay Homa / Havan",
+      description: "Powerful fire ceremony for health, longevity, and protection from untimely death.",
       icon: Gift,
-      price: "₹3,000",
       duration: "2-3 hours",
       features: [
-        "Lakshmi idol decoration",
-        "Wealth attraction mantras",
-        "Gold and silver offerings",
-        "Business prosperity rituals",
-        "Financial abundance blessings",
-        "Prosperity yantra installation"
+        "Health and longevity",
+        "Protection rituals",
+        "Sacred fire ceremony",
+        "Mritunjay mantras",
+        "Healing blessings",
+        "Life protection"
       ],
       image: pujaGallery,
-      category: "Deity Worship"
+      category: "Offline Services"
     },
     {
-      title: "Akhand Ramayan Path",
-      description: "Continuous reading of Ramayan for spiritual purification, family harmony, and divine protection.",
+      title: "Office / Business Pooja",
+      description: "Sacred ceremony to bless your business, office, or workplace with prosperity and success.",
       icon: Book,
-      price: "₹8,000",
-      duration: "24-48 hours",
+      duration: "1-2 hours",
       features: [
-        "Non-stop Ramayan recitation",
-        "Multiple pandit rotation",
-        "Spiritual atmosphere creation",
-        "Family karma purification",
-        "Divine protection rituals",
-        "Complete spiritual cleansing"
+        "Business prosperity",
+        "Success blessings",
+        "Office purification",
+        "Wealth attraction",
+        "Team harmony",
+        "Growth enhancement"
       ],
       image: heroTemple,
-      category: "Scripture Reading"
+      category: "Offline Services"
     },
     {
-      title: "Shradh Puja (Pitru Paksha)",
-      description: "Ancestral worship ceremony to honor departed souls and seek their blessings for family welfare.",
+      title: "Bhoomi Pooja",
+      description: "Land blessing ceremony performed before construction to ensure prosperity and remove obstacles.",
       icon: Flower,
-      price: "₹3,500",
-      duration: "2-3 hours",
+      duration: "1-2 hours",
       features: [
-        "Ancestral offerings",
-        "Pitru mantras chanting",
-        "Tarpan ceremony",
-        "Food offerings to ancestors",
-        "Family lineage blessings",
-        "Spiritual liberation rituals"
+        "Land purification",
+        "Construction blessings",
+        "Obstacle removal",
+        "Vastu corrections",
+        "Prosperity enhancement",
+        "Safe construction"
       ],
       image: panditPuja,
-      category: "Ancestral Worship"
+      category: "Offline Services"
+    },
+    {
+      title: "Namkaran (Naming Ceremony)",
+      description: "Sacred naming ceremony for newborns to bless them with a prosperous and meaningful life.",
+      icon: Star,
+      duration: "1-2 hours",
+      features: [
+        "Baby naming ritual",
+        "Astrological guidance",
+        "Family blessings",
+        "Prosperity wishes",
+        "Traditional customs",
+        "Life path blessings"
+      ],
+      image: ganeshPuja,
+      category: "Offline Services"
+    },
+    {
+      title: "Nakshatra Shanti Pooja",
+      description: "Planetary peace ceremony to reduce negative effects of birth stars and enhance positive influences.",
+      icon: Sun,
+      duration: "2-3 hours",
+      features: [
+        "Birth star analysis",
+        "Planetary peace rituals",
+        "Astrological guidance",
+        "Harmony restoration",
+        "Positive energy enhancement",
+        "Life balance"
+      ],
+      image: heroTemple,
+      category: "Offline Services"
+    },
+    {
+      title: "Durga Saptashati / Chandi Paath",
+      description: "Powerful recitation of Durga Saptashati for protection, courage, and victory over obstacles.",
+      icon: Flame,
+      duration: "3-4 hours",
+      features: [
+        "Durga mantras",
+        "Protection rituals",
+        "Courage enhancement",
+        "Obstacle removal",
+        "Victory blessings",
+        "Spiritual strength"
+      ],
+      image: pujaGallery,
+      category: "Offline Services"
     }
   ];
 
@@ -211,7 +250,7 @@ const Services = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <Badge className="mb-4 gradient-sacred text-white">Our Sacred Services</Badge>
-            <h1 className="text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-5xl font-bold text-sacred mb-6">
               Traditional Hindu Puja Services
             </h1>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -239,7 +278,7 @@ const Services = () => {
             <Button
               variant={searchTerm === "" ? "default" : "outline"}
               onClick={() => setSearchTerm("")}
-              className={searchTerm === "" ? "gradient-sacred" : "border-primary text-primary hover:bg-primary hover:text-white"}
+              className={searchTerm === "" ? "gradient-sacred-btn" : "border-primary text-primary hover:bg-primary hover:text-white hover-sacred"}
             >
               All Services
             </Button>
@@ -270,7 +309,7 @@ const Services = () => {
               </p>
               <Button 
                 onClick={() => setSearchTerm("")}
-                className="mt-4 gradient-sacred hover-sacred"
+                className="mt-4 gradient-sacred-btn hover-sacred"
               >
                 View All Services
               </Button>
@@ -290,7 +329,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Why Choose Us</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-sacred mb-6">
               Authentic • Experienced • Devoted
             </h2>
           </div>
@@ -342,7 +381,7 @@ const Services = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-sacred mb-6">
               Ready to Book Your Sacred Ceremony?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -352,7 +391,7 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="gradient-sacred hover-sacred text-lg px-8 py-6"
+                className="gradient-sacred-btn hover-sacred text-lg px-8 py-6"
                                  onClick={() => initiatePhoneCall("+91 987 654 3211")}
               >
                 <Phone className="mr-2 h-5 w-5" />
@@ -361,7 +400,7 @@ const Services = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6 hover-sacred"
+                className="border-2 border-primary text-primary hover:border-om hover:gradient-sacred-btn hover:text-white text-lg px-8 py-6 hover-sacred"
                                  onClick={() => openWhatsAppConsultation("+91 987 654 3211")}
               >
                 Get Consultation

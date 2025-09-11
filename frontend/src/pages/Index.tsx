@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import TestimonialCard from "@/components/TestimonialCard";
 import ServiceCard from "@/components/ServiceCard";
 import { 
@@ -15,42 +17,177 @@ import {
   CircleCheck,
   Gift,
   Crown,
-  Calendar
+  Calendar,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Eye
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroTemple from "@/assets/hero-temple.jpg";
 import panditPuja from "@/assets/pandit-puja.jpg";
 import weddingCeremony from "@/assets/wedding-ceremony.jpg";
 import ganeshPuja from "@/assets/ganesh-puja.jpg";
+import omSymbol from "@/assets/om-symbol.jpg";
+import pujaGallery from "@/assets/puja-gallery.jpg";
 import { initiatePhoneCall } from "@/utils/phoneUtils";
 
 const Index = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const galleryImages = [
+    {
+      id: 1,
+      src: "/images/Img_01.webp",
+      category: "Puja"
+    },
+    {
+      id: 2,
+      src: "/images/Img_02.webp",
+      category: "Puja"
+    },
+    {
+      id: 3,
+      src: "/images/Img_03.webp",
+      category: "Puja"
+    },
+    {
+      id: 4,
+      src: "/images/Img_04.webp",
+      category: "Puja"
+    },
+    {
+      id: 5,
+      src: "/images/Img_05.webp",
+      category: "Puja"
+    },
+    {
+      id: 6,
+      src: "/images/Img_06.webp",
+      category: "Puja"
+    },
+    {
+      id: 7,
+      src: "/images/Satyanarayan_pooja.webp",
+      category: "Puja"
+    },
+    {
+      id: 8,
+      src: "/images/Grahpravesh.webp",
+      category: "Puja"
+    },
+    {
+      id: 9,
+      src: "/images/Grah-pooja.webp",
+      category: "Puja"
+    },
+    {
+      id: 10,
+      src: "/images/Navgrah_pooja.webp",
+      category: "Puja"
+    },
+    {
+      id: 11,
+      src: "/images/rudraabhishek.webp",
+      category: "Puja"
+    },
+    {
+      id: 12,
+      src: heroTemple,
+      category: "Temples"
+    },
+    {
+      id: 13,
+      src: panditPuja,
+      category: "Ceremonies"
+    },
+    {
+      id: 14,
+      src: weddingCeremony,
+      category: "Weddings"
+    },
+    {
+      id: 15,
+      src: ganeshPuja,
+      category: "Festivals"
+    },
+    {
+      id: 16,
+      src: omSymbol,
+      category: "Symbols"
+    },
+    {
+      id: 17,
+      src: pujaGallery,
+      category: "Ceremonies"
+    },
+    {
+      id: 18,
+      src: heroTemple,
+      category: "Temples"
+    },
+    {
+      id: 19,
+      src: weddingCeremony,
+      category: "Ceremonies"
+    },
+    {
+      id: 20,
+      src: ganeshPuja,
+      category: "Festivals"
+    }
+  ];
+
+  const categories = ["All", ...new Set(galleryImages.map(img => img.category))];
+
+  const filteredImages = selectedCategory === "All" 
+    ? galleryImages 
+    : galleryImages.filter(img => img.category === selectedCategory);
+
+  const openImage = (index: number) => {
+    setSelectedImageIndex(index);
+  };
+
+  const closeImage = () => {
+    setSelectedImageIndex(null);
+  };
+
+  const nextImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex < filteredImages.length - 1) {
+      setSelectedImageIndex(selectedImageIndex + 1);
+    }
+  };
+
+  const previousImage = () => {
+    if (selectedImageIndex !== null && selectedImageIndex > 0) {
+      setSelectedImageIndex(selectedImageIndex - 1);
+    }
+  };
+
   const featuredServices = [
     {
-      title: "Griha Pravesh Puja",
-      description: "Traditional house warming ceremony to bless your new home with prosperity and positive energy.",
+      title: "Online Pooja Services",
+      description: "Performed live and guided through digital platforms, ensuring that families across the globe can connect with the divine from their homes.",
       icon: Home,
-      price: "₹3,500",
-      duration: "2-3 hours",
-      features: ["Complete puja materials", "Sanskrit mantras", "Prasadam included", "Home blessing ritual"],
+      duration: "1-3 hours",
+      features: ["Satyanarayan Katha", "Namkaran (Naming Ceremony)", "Ganapati/Ganesh Pooja", "Live digital guidance"],
       image: panditPuja
     },
     {
-      title: "Marriage Puja",
-      description: "Sacred wedding ceremonies performed with authentic Vedic rituals for a blessed union.",
+      title: "Consultation",
+      description: "Guidance rooted in tradition and calculation to bring balance and prosperity.",
       icon: Heart,
-      price: "₹15,000",
-      duration: "4-6 hours",
-      features: ["Full wedding ceremony", "Sacred fire ritual", "Traditional customs", "Blessing ceremonies"],
+      duration: "30-60 minutes",
+      features: ["Numerology Consultation", "Personal guidance", "Traditional calculations", "Prosperity guidance"],
       image: weddingCeremony
     },
     {
-      title: "Ganapathi Puja",
-      description: "Remove obstacles and invite prosperity with authentic Lord Ganesha worship rituals.",
+      title: "Offline Pooja Services",
+      description: "Performed in person at your home, temple, office, or sacred location.",
       icon: Crown,
-      price: "₹2,500",
-      duration: "1-2 hours",
-      features: ["Ganesha idol setup", "Modak prasadam", "Special mantras", "Obstacle removal ritual"],
+      duration: "2-6 hours",
+      features: ["Griha Pravesh Pooja", "Vastu Shanti Pooja", "Mahaganapathi Homa", "Wedding Ceremonies"],
       image: ganeshPuja
     }
   ];
@@ -113,15 +250,15 @@ const Index = () => {
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           {/* <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-sacred animate-divine-float"> */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-sacred">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-sacred text-sacred">
             Divine Puja Services
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-shadow-sacred">
-            Experience the Authenticity and Charm of North Indian Hindi Pandits
+          <p className="text-xl md:text-2xl mb-8 text-shadow-sacred text-sacred">
+            Experience Authentic Hindu Traditions — Online & Offline Worldwide
           </p>
-          <p className="text-lg mb-10 max-w-2xl mx-auto opacity-90">
-            Bringing sacred Hindu traditions to your doorstep with deep knowledge of scriptures, 
-            authentic rituals, and divine blessings for your family's spiritual journey.
+          <p className="text-lg mb-10 max-w-2xl mx-auto opacity-90 text-sacred">
+            Bringing sacred Hindu traditions to families across the globe with deep knowledge of scriptures, 
+            authentic rituals, and divine blessings for your family's spiritual journey, whether you're in India or abroad.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -168,7 +305,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-4 gradient-sacred text-white">About Our Services</Badge>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
+              <h2 className="text-4xl font-bold mb-6 text-sacred">
                 Authentic North Indian Hindu Pandit Services
               </h2>
               <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
@@ -195,7 +332,7 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              <Button className="mt-8 gradient-sacred hover-sacred" size="lg" asChild>
+              <Button className="mt-8 gradient-sacred-btn hover-sacred" size="lg" asChild>
                 <Link to="/about">Learn More About Us</Link>
               </Button>
             </div>
@@ -215,12 +352,38 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Connecting Tradition Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <Badge className="mb-4 gradient-sacred text-white">Our Mission</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-sacred mb-8">
+              Connecting Tradition with Today
+              <span className="block text-primary mt-2">Online & Offline Pooja Services</span>
+            </h2>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Bringing the blessings of tradition into your home, office, or sacred space — wherever you are in the world.
+                With a proud family lineage of respected priests and years of dedicated training under senior
+                Acharyas, I perform authentic Vedic rituals, samskaras, and homas with devotion, clarity, and
+                scriptural precision for families across the globe.
+              </p>
+              <p>
+                Whether you're in India or abroad, seeking to perform a sacred ceremony at home, inaugurate a new business, 
+                or connect with divinity through online guided pujas, I ensure every ritual is conducted with peace, devotion,
+                and guidance for your family, bridging the distance between tradition and your spiritual needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Services */}
       <section className="py-20 gradient-divine">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Our Sacred Services</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-sacred mb-6">
               Traditional Hindu Puja Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -236,11 +399,95 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button className="gradient-sacred hover-sacred" size="lg" asChild>
+            <Button className="gradient-sacred-btn hover-sacred" size="lg" asChild>
               <Link to="/services">
                 <Gift className="mr-2 h-5 w-5" />
                 View All Services
               </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 gradient-sacred text-white">Sacred Gallery</Badge>
+            <h2 className="text-4xl font-bold text-sacred mb-6">
+              Sacred Moments Captured
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore our collection of beautiful moments from Hindu ceremonies, festivals, 
+              and spiritual celebrations. Each image tells a story of devotion, tradition, and divine blessings.
+            </p>
+          </div>
+
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                onClick={() => setSelectedCategory(category)}
+                className={selectedCategory === category 
+                  ? "gradient-sacred-btn" 
+                  : "border-primary text-primary hover:bg-primary hover:text-white hover-sacred"
+                }
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+
+          <p className="text-center text-muted-foreground mb-8">
+            Click on any image to view in full size
+          </p>
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+            {filteredImages.slice(0, 8).map((image, index) => (
+              <div 
+                key={image.id} 
+                className="relative group cursor-pointer overflow-hidden rounded-lg hover-sacred"
+                onClick={() => openImage(index)}
+              >
+                <img 
+                  src={image.src} 
+                  alt={image.category}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <Eye className="w-8 h-8 text-white" />
+                </div>
+                <Badge className="absolute top-2 right-2 gradient-sacred-btn text-white text-xs">
+                  {image.category}
+                </Badge>
+              </div>
+            ))}
+          </div>
+
+          {filteredImages.length === 0 && (
+            <div className="text-center py-12">
+              <h3 className="text-2xl font-semibold text-foreground mb-4">
+                No images found in this category
+              </h3>
+              <p className="text-muted-foreground">
+                Try selecting a different category to view more images.
+              </p>
+            </div>
+          )}
+
+          <div className="text-center">
+            <Button 
+              className="gradient-sacred-btn hover-sacred" 
+              size="lg" 
+              onClick={() => initiatePhoneCall("+91 987 654 3211")}
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              Book Your Ceremony
             </Button>
           </div>
         </div>
@@ -251,7 +498,7 @@ const Index = () => {
         <div className="absolute inset-0 gradient-sacred opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-sacred mb-6">
               Ready to Experience Divine Blessings?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -261,7 +508,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="gradient-sacred hover-sacred text-lg px-8 py-6"
+                className="gradient-sacred-btn hover-sacred text-lg px-8 py-6"
                 onClick={() => initiatePhoneCall("+91 987 654 3211")}
               >
                 <Phone className="mr-2 h-5 w-5" />
@@ -270,7 +517,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-8 py-6 hover-sacred"
+                className="border-2 border-temple hover:border-om text-primary hover:gradient-sacred-btn hover:text-white text-lg px-8 py-6 hover-sacred"
                 asChild
               >
                 <Link to="/contact">
@@ -288,7 +535,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Client Testimonials</Badge>
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl font-bold text-sacred mb-6">
               What Our Devotees Say
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -304,12 +551,70 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white hover-sacred" asChild>
+            <Button variant="outline" className="border-primary text-primary hover:gradient-sacred-btn hover:text-white hover-sacred" asChild>
               <Link to="/about">View More Testimonials</Link>
             </Button>
           </div>
         </div>
       </section>
+
+      {/* Image Preview Modal */}
+      <Dialog open={selectedImageIndex !== null} onOpenChange={closeImage}>
+        <DialogContent className="max-w-6xl w-full max-h-[95vh] overflow-hidden p-0 bg-black/20 border-0">
+          {selectedImageIndex !== null && (
+            <>
+              {/* Header with close button */}
+              <div className="absolute top-6 right-6 z-10">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={closeImage}
+                  className="h-12 w-12 p-0 bg-white/20 hover:bg-white/30 text-white rounded-full hover-sacred"
+                >
+                  <X className="h-6 w-6" />
+                </Button>
+              </div>
+
+              {/* Navigation buttons */}
+              {selectedImageIndex > 0 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={previousImage}
+                  className="absolute left-8 top-1/2 transform -translate-y-1/2 h-14 w-14 p-0 bg-white/20 hover:bg-white/30 text-white rounded-full z-10 hover-sacred"
+                >
+                  <ChevronLeft className="h-7 w-7" />
+                </Button>
+              )}
+
+              {selectedImageIndex < filteredImages.length - 1 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={nextImage}
+                  className="absolute right-8 top-1/2 transform -translate-y-1/2 h-14 w-14 p-0 bg-white/20 hover:bg-white/30 text-white rounded-full z-10 hover-sacred"
+                >
+                  <ChevronRight className="h-7 w-7" />
+                </Button>
+              )}
+
+              {/* Image */}
+              <div className="flex items-center justify-center h-full p-12">
+                <img 
+                  src={filteredImages[selectedImageIndex].src} 
+                  alt={filteredImages[selectedImageIndex].category}
+                  className="max-w-full max-h-full object-contain rounded-lg"
+                />
+              </div>
+
+              {/* Image counter */}
+              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm">
+                {selectedImageIndex + 1} of {filteredImages.length}
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

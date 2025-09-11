@@ -69,12 +69,12 @@ const Contact = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Contact Us</Badge>
-            <h1 className="text-5xl font-bold text-foreground mb-6">
-              Connect with Divine Blessings
+            <h1 className="text-5xl font-bold text-sacred mb-6">
+              Connect with Divine Blessings Worldwide
             </h1>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Ready to invite sacred traditions into your life? Our experienced pandits are available 24/7 
-              to guide you through authentic Hindu ceremonies and spiritual practices.
+              Bringing authentic Hindu traditions to families across the globe. Whether you're in India or abroad, 
+              our experienced pandits are available 24/7 to guide you through sacred ceremonies both online and offline.
             </p>
           </div>
 
@@ -87,9 +87,9 @@ const Contact = () => {
                   <h3 className="text-lg font-semibold text-foreground mb-2">{action.title}</h3>
                   <p className="text-muted-foreground mb-4">{action.description}</p>
                   <Button 
-                    className={action.variant === "primary" ? "gradient-sacred hover-sacred" : 
+                    className={action.variant === "primary" ? "gradient-sacred-btn hover-sacred" : 
                                action.variant === "secondary" ? "bg-accent hover:bg-accent/80" : 
-                               "border-primary text-primary hover:bg-primary hover:text-white"}
+                               "border-primary text-primary hover:border-om hover:gradient-sacred-btn hover-sacred"}
                     variant={action.variant === "outline" ? "outline" : "default"}
                     onClick={action.onClick}
                   >
@@ -107,7 +107,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Badge className="mb-4 gradient-sacred text-white">Get in Touch</Badge>
-            <h2 className="text-3xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl font-bold text-sacred mb-6">
               Contact Information
             </h2>
 
@@ -208,7 +208,7 @@ const Contact = () => {
                   auspicious timing, and traditional requirements.
                 </p>
                 <Button 
-                  className="w-full gradient-sacred hover-sacred"
+                  className="w-full gradient-sacred-btn hover-sacred"
                   onClick={() => openWhatsAppConsultation("+91 987 654 3211")}
                 >
                   <Calendar className="w-4 h-4 mr-2" />
@@ -223,13 +223,13 @@ const Contact = () => {
       {/* FAQ Section */}
       <section className="py-20 gradient-divine">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             <Badge className="mb-4 gradient-sacred text-white">Common Questions</Badge>
-            <h2 className="text-3xl font-bold text-foreground mb-12">
+            <h2 className="text-3xl font-bold text-sacred mb-12">
               Frequently Asked Questions
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
               <Card className="border-primary/20 hover-sacred">
                 <CardContent className="pt-6">
                   <h3 className="font-semibold text-foreground mb-3">How much advance booking is needed?</h3>
@@ -266,6 +266,28 @@ const Contact = () => {
                   <p className="text-muted-foreground">
                     Absolutely! We respect and incorporate your family's specific traditions 
                     while maintaining authentic Vedic procedures. Each ceremony is personalized.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-primary/20 hover-sacred">
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold text-foreground mb-3">How do online puja services work for families abroad?</h3>
+                  <p className="text-muted-foreground">
+                    Our online pujas are conducted live via video calls, guiding you through every step. 
+                    We provide detailed instructions, send blessed materials, and ensure you feel connected 
+                    to the divine from anywhere in the world.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-primary/20 hover-sacred">
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold text-foreground mb-3">What time zones do you accommodate for international clients?</h3>
+                  <p className="text-muted-foreground">
+                    We offer flexible scheduling to accommodate different time zones worldwide. 
+                    Whether you're in the US, UK, Canada, Australia, or anywhere else, we'll find 
+                    a suitable time for your sacred ceremony.
                   </p>
                 </CardContent>
               </Card>
