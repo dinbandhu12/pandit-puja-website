@@ -59,6 +59,9 @@
     --om: #f4b371;
     --subtextone: #616161;
     --subtexttwo: #313131;
+    
+    /* Section Background Colors */
+    --section-bg-light: hsl(218, 36%, 67%);
 
     /* Sacred Shadows */
     --shadow-divine: 0 10px 30px -10px hsl(15 90% 55% / 0.3);
@@ -227,6 +230,10 @@
 
   .gradient-om {
     background: var(--gradient-om);
+  }
+
+  .bg-section-light {
+    background-color: var(--section-bg-light);
   }
 }
 

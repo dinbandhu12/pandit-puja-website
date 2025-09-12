@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import TestimonialCard from "@/components/TestimonialCard";
-import ServiceCard from "@/components/ServiceCard";
+import HomepageServiceCard from "@/components/HomepageServiceCard";
 import { 
   Phone, 
   Star, 
@@ -245,18 +245,30 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroTemple})` }}
         >
-          <div className="absolute inset-0 gradient-sacred opacity-75"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-sacred/85 via-sacred/75 to-sacred/90"></div>
         </div>
         
+        {/* Floating Elements */}
+        {/* <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-white/5 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 left-20 w-12 h-12 bg-white/8 rounded-full animate-pulse delay-2000"></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-white/6 rounded-full animate-pulse delay-500"></div>
+        </div> */}
+        
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          {/* <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-sacred animate-divine-float"> */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-shadow-sacred text-sacred">
+          <div className="mb-6">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm">
+              ✨ Authentic Hindu Traditions
+            </Badge>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
             Divine Puja Services
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-shadow-sacred text-sacred">
+          <p className="text-xl md:text-2xl mb-8 text-white/95 font-medium">
             Experience Authentic Hindu Traditions — Online & Offline Worldwide
           </p>
-          <p className="text-lg mb-10 max-w-2xl mx-auto opacity-90 text-sacred">
+          <p className="text-lg mb-10 max-w-2xl mx-auto text-white/90 leading-relaxed">
             Bringing sacred Hindu traditions to families across the globe with deep knowledge of scriptures, 
             authentic rituals, and divine blessings for your family's spiritual journey, whether you're in India or abroad.
           </p>
@@ -285,14 +297,20 @@ const Index = () => {
       </section>
 
       {/* Quick Stats */}
-      <section className="py-16 gradient-divine">
+      <section className="py-16 bg-gradient-to-r from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-sacred mb-4">Trusted by Thousands</h2>
+            <p className="text-gray-600">Our commitment to authentic Hindu traditions</p>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <stat.icon className="w-12 h-12 text-primary mx-auto mb-4 animate-sacred-glow" />
-                <h3 className="text-3xl font-bold text-primary mb-2">{stat.number}</h3>
-                <p className="text-muted-foreground">{stat.label}</p>
+              <div key={index} className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-3xl font-bold text-sacred mb-2">{stat.number}</h3>
+                <p className="text-gray-600 font-medium">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -300,37 +318,27 @@ const Index = () => {
       </section>
 
       {/* About Preview */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 gradient-sacred text-white">About Our Services</Badge>
+              <Badge className="mb-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white">About Our Services</Badge>
               <h2 className="text-4xl font-bold mb-6 text-sacred">
-                Authentic North Indian Hindu Pandit Services
+                Connecting Tradition with Today
+                <span className="block text-orange-600 mt-2">Online & Offline Pooja Services</span>
               </h2>
-              <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-                As you traverse the bustling streets of modern cities, you'll encounter a treasure trove 
-                of temples, ashrams, and cultural centers. These sacred spaces pulsate with the energy 
-                of devotion and are adorned with intricate architectural details, inviting you to explore 
-                and experience the profound wisdom of ancient traditions.
-              </p>
-              <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
-                The North Indian Hindi Pandits, with their deep knowledge of Hindu scriptures and rituals, 
-                are revered for their spiritual guidance and the sacred ceremonies they conduct. Dressed 
-                in resplendent traditional attire, their presence exudes an aura of reverence and humility.
-              </p>
-              <div className="space-y-4">
-                {[
-                  "15+ Years of Experience in Hindu Rituals",
-                  "Authentic Sanskrit Mantras & Vedic Procedures",
-                  "Complete Puja Materials & Setup Included",
-                  "Available 24/7 for Emergency Ceremonies"
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <CircleCheck className="w-6 h-6 text-primary" />
-                    <span className="text-foreground">{feature}</span>
-                  </div>
-                ))}
+              <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+                <p>
+                  Bringing the blessings of tradition into your home, office, or sacred space — wherever you are in the world.
+                  With a proud family lineage of respected priests and years of dedicated training under senior
+                  Acharyas, I perform authentic Vedic rituals, samskaras, and homas with devotion, clarity, and
+                  scriptural precision for families across the globe.
+                </p>
+                <p>
+                  Whether you're in India or abroad, seeking to perform a sacred ceremony at home, inaugurate a new business, 
+                  or connect with divinity through online guided pujas, I ensure every ritual is conducted with peace, devotion,
+                  and guidance for your family, bridging the distance between tradition and your spiritual needs.
+                </p>
               </div>
               <Button className="mt-8 gradient-sacred-btn hover-sacred" size="lg" asChild>
                 <Link to="/about">Learn More About Us</Link>
@@ -352,34 +360,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Connecting Tradition Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <Badge className="mb-4 gradient-sacred text-white">Our Mission</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-sacred mb-8">
-              Connecting Tradition with Today
-              <span className="block text-primary mt-2">Online & Offline Pooja Services</span>
-            </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Bringing the blessings of tradition into your home, office, or sacred space — wherever you are in the world.
-                With a proud family lineage of respected priests and years of dedicated training under senior
-                Acharyas, I perform authentic Vedic rituals, samskaras, and homas with devotion, clarity, and
-                scriptural precision for families across the globe.
-              </p>
-              <p>
-                Whether you're in India or abroad, seeking to perform a sacred ceremony at home, inaugurate a new business, 
-                or connect with divinity through online guided pujas, I ensure every ritual is conducted with peace, devotion,
-                and guidance for your family, bridging the distance between tradition and your spiritual needs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Services */}
-      <section className="py-20 gradient-divine">
+      <section className="py-20" style={{backgroundColor: 'hsl(217, 37%, 90%)'}}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Our Sacred Services</Badge>
@@ -394,23 +376,38 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {featuredServices.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+              <HomepageServiceCard key={index} {...service} />
             ))}
           </div>
 
-          <div className="text-center">
-            <Button className="gradient-sacred-btn hover-sacred" size="lg" asChild>
-              <Link to="/services">
-                <Gift className="mr-2 h-5 w-5" />
-                View All Services
-              </Link>
-            </Button>
+          <div className="text-center space-y-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="gradient-sacred-btn hover-sacred text-lg px-8 py-6"
+                onClick={() => initiatePhoneCall("+91 987 654 3211")}
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                Call to Book: +91 987 654 3211
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-primary text-primary hover:border-om hover:gradient-sacred-btn hover:text-white text-lg px-8 py-6 hover-sacred"
+                asChild
+              >
+                <Link to="/services">
+                  <Gift className="mr-2 h-5 w-5" />
+                  View All Services
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20">
+      <section className="py-20" style={{backgroundColor: 'hsl(25, 35%, 88%)'}}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Sacred Gallery</Badge>
@@ -494,14 +491,14 @@ const Index = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-sacred opacity-10"></div>
+      <section className="py-20 relative overflow-hidden bg-section-light">
+        <div className="absolute inset-0 opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-sacred mb-6">
               Ready to Experience Divine Blessings?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               Contact us today to book your personalized puja service. Our experienced pandits 
               are available 24/7 to bring sacred rituals to your home.
             </p>
@@ -531,7 +528,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 gradient-divine">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Client Testimonials</Badge>

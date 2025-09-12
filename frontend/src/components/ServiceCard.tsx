@@ -21,7 +21,7 @@ const ServiceCard = ({
   image 
 }: ServiceCardProps) => {
   return (
-    <Card className="hover-sacred border-primary/20 bg-card/80 backdrop-blur-sm overflow-hidden group">
+    <Card className="border-primary/20 bg-card/80 backdrop-blur-sm overflow-hidden group animate-sacred-glow">
       {image && (
         <div className="relative h-48 overflow-hidden">
           <img 
@@ -58,12 +58,6 @@ const ServiceCard = ({
             ))}
           </ul>
         </div>
-        <Button 
-          className="w-full gradient-sacred-btn hover-sacred"
-          onClick={() => openWhatsAppServiceInquiry("+91 987 654 3211", title)}
-        >
-          Book This Puja
-        </Button>
       </CardContent>
     </Card>
   );
