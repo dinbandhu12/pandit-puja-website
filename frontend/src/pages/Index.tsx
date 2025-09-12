@@ -259,18 +259,18 @@ const Index = () => {
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
           <div className="mb-6">
             <Badge className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm">
-              ✨ Authentic Hindu Traditions
+              ✨ Authentic Vedic Traditions
             </Badge>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
-            Divine Puja Services
+            Vedokta Pooja Services
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/95 font-medium">
-            Experience Authentic Hindu Traditions — Online & Offline Worldwide
+            Connecting Tradition with Today — Online & Offline Pooja Services
           </p>
           <p className="text-lg mb-10 max-w-2xl mx-auto text-white/90 leading-relaxed">
-            Bringing sacred Hindu traditions to families across the globe with deep knowledge of scriptures, 
-            authentic rituals, and divine blessings for your family's spiritual journey, whether you're in India or abroad.
+          Bringing the blessings of tradition into your home, office, or sacred space. <br />
+          With a proud family lineage of respected priests and years of dedicated training under senior
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -421,15 +421,16 @@ const Index = () => {
           </div>
 
           {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={selectedCategory === category ? "default" : "outline"}
+                size="sm"
                 onClick={() => setSelectedCategory(category)}
                 className={selectedCategory === category 
-                  ? "gradient-sacred-btn" 
-                  : "border-primary text-primary hover:bg-primary hover:text-white hover-sacred"
+                  ? "gradient-sacred-btn text-sm px-3 py-1" 
+                  : "border-primary text-primary hover:bg-primary hover:text-white hover-sacred text-sm px-3 py-1"
                 }
               >
                 {category}
@@ -491,16 +492,16 @@ const Index = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 relative overflow-hidden bg-section-light">
-        <div className="absolute inset-0 opacity-10"></div>
+      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-blue-300 via-purple-300 to-indigo-300">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-200/40 via-purple-200/40 to-indigo-200/40 opacity-50"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-sacred mb-6">
-              Ready to Experience Divine Blessings?
+              Ready to Experience Vedic Blessings?
             </h2>
             <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               Contact us today to book your personalized puja service. Our experienced pandits 
-              are available 24/7 to bring sacred rituals to your home.
+              are available 24/7 to bring Vedic rituals to your home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 

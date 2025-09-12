@@ -187,6 +187,11 @@
   }
 
   /* Sacred Hover Effects */
+  .hover-sacred-logo {
+    transition: var(--transition-sacred);
+    position: relative;
+    /* overflow: hidden; */
+  }
   .hover-sacred {
     transition: var(--transition-sacred);
     position: relative;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import omSymbol from "@/assets/om-symbol.jpg";
+import logo from "@/assets/logo.png";
 import { initiatePhoneCall } from "@/utils/phoneUtils";
 
 const Header = () => {
@@ -24,17 +24,17 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover-sacred">
+          <Link to="/" className="flex items-center space-x-3 hover-sacred-logo">
             <img 
-              src={omSymbol} 
-              alt="Hindu Puja Services" 
+              src={logo} 
+              alt="VEDOKTA POOJA" 
               className="w-12 h-12 rounded-full border-2 border-primary animate-om-pulse"
             />
             <div>
               <h1 className="text-2xl font-bold text-primary text-shadow-sacred">
-                Divine Puja Services
+                VEDOKTA POOJA
               </h1>
-              <p className="text-sm text-muted-foreground">Authentic Hindu Rituals</p>
+              <p className="text-sm text-muted-foreground">Authentic Vedic Rituals</p>
             </div>
           </Link>
 

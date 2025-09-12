@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
-import omSymbol from "@/assets/om-symbol.jpg";
+import logo from "@/assets/logo.png";
 import { initiatePhoneCall } from "@/utils/phoneUtils";
 
 const Footer = () => {
@@ -12,18 +12,20 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img 
-                src={omSymbol} 
-                alt="Divine Puja Services" 
+                src={logo} 
+                alt="VEDOKTA POOJA" 
                 className="w-10 h-10 rounded-full border border-primary"
               />
               <div>
-                <h3 className="text-xl font-bold text-primary">Divine Puja Services</h3>
-                <p className="text-sm text-muted-foreground">Authentic Hindu Rituals</p>
+                <h3 className="text-xl font-bold text-primary">VEDOKTA POOJA</h3>
+                <p className="text-sm text-muted-foreground">Authentic Vedic Rituals</p>
               </div>
             </div>
             <p className="text-muted-foreground">
-              Experience the authenticity and charm of North Indian Hindi Pandits. 
-              We provide traditional puja services with deep knowledge of Hindu scriptures and rituals.
+              {/* Experience the authenticity and charm of North Indian Hindi Pandits. 
+              We provide traditional puja services with deep knowledge of Hindu scriptures and rituals. */}
+              Bringing Vedic blessings to your home, office, or sacred space with devotion and tradition.
+              I offer authentic rituals and guided pujas with clarity and care, in person or online.
             </p>
             <div className="flex space-x-3">
               <Facebook className="w-5 h-5 text-primary hover:text-accent transition-colors cursor-pointer" />
@@ -67,9 +69,9 @@ const Footer = () => {
               <Link to="/services" className="block text-muted-foreground hover:text-primary transition-colors">
                 Satyanarayan Puja
               </Link>
-              <Link to="/services" className="block text-muted-foreground hover:text-primary transition-colors">
+              {/* <Link to="/services" className="block text-muted-foreground hover:text-primary transition-colors">
                 Marriage Puja
-              </Link>
+              </Link> */}
               <Link to="/services" className="block text-muted-foreground hover:text-primary transition-colors">
                 Ganapathi Puja
               </Link>
@@ -119,8 +121,8 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground">
-            © 2024 Divine Puja Services. All rights reserved. | 
-            <span className="text-primary"> Bringing Divine Blessings to Your Home</span>
+            © 2024 VEDOKTA POOJA. All rights reserved. | 
+            <span className="text-primary"> Bringing Vedic Blessings to Your Home</span>
           </p>
         </div>
       </div>
