@@ -492,14 +492,13 @@ const Index = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-blue-300 via-purple-300 to-indigo-300">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-200/40 via-purple-200/40 to-indigo-200/40 opacity-50"></div>
+      <section className="py-24 relative overflow-hidden" style={{backgroundColor: 'hsl(217, 37%, 90%)'}}>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-sacred mb-6">
               Ready to Experience Vedic Blessings?
             </h2>
-            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Contact us today to book your personalized puja service. Our experienced pandits 
               are available 24/7 to bring Vedic rituals to your home.
             </p>
@@ -529,7 +528,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Client Testimonials</Badge>
@@ -554,7 +553,8 @@ const Index = () => {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
+
 
       {/* Image Preview Modal */}
       <Dialog open={selectedImageIndex !== null} onOpenChange={closeImage}>

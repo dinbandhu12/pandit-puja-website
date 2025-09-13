@@ -88,7 +88,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">

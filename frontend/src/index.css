@@ -249,7 +249,7 @@
 
   .backdrop-blur-sacred {
     backdrop-filter: blur(10px);
-    background: hsl(var(--background) / 0.9);
+    background: hsl(var(--background) / 0.5);
   }
 }
 
