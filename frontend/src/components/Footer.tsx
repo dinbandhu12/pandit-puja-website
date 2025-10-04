@@ -93,10 +93,10 @@ const Footer = () => {
                 <div>
                   <p 
                     className="font-medium cursor-pointer hover:text-primary/80 transition-colors"
-                                         onClick={() => initiatePhoneCall("+91 987 654 3211")}
-                     title="Click to call +91 987 654 3211"
+                                         onClick={() => initiatePhoneCall("+91 8105107271")}
+                     title="Click to call +91 8105107271"
                   >
-                                         +91 987 654 3211
+                                         +91 8105107271
                   </p>
                   <p className="text-sm text-muted-foreground">Available 24/7</p>
                 </div>
@@ -104,7 +104,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
                 <div>
-                  <p className="font-medium">info@divinepuja.com</p>
+                  <p className="font-medium">sharmakabhay25@gmail.com</p>
                   <p className="text-sm text-muted-foreground">Email us anytime</p>
                 </div>
               </div>
@@ -112,7 +112,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-primary" />
                 <div>
                   <p className="font-medium">Bangalore, Karnataka</p>
-                  <p className="text-sm text-muted-foreground">Serving across India</p>
+                  <p className="text-sm text-muted-foreground">Online services worldwide</p>
                 </div>
               </div>
             </div>

@@ -392,16 +392,16 @@ const Services = () => {
               <Button 
                 size="lg" 
                 className="gradient-sacred-btn hover-sacred text-lg px-8 py-6"
-                                 onClick={() => initiatePhoneCall("+91 987 654 3211")}
+                                 onClick={() => initiatePhoneCall("+91 8105107271")}
               >
                 <Phone className="mr-2 h-5 w-5" />
-                                 Call +91 987 654 3211
+                                 Call +91 8105107271
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
                 className="border-2 border-primary text-primary hover:border-om hover:gradient-sacred-btn hover:text-white text-lg px-8 py-6 hover-sacred"
-                                 onClick={() => openWhatsAppConsultation("+91 987 654 3211")}
+                                 onClick={() => openWhatsAppConsultation("+91 8105107271")}
               >
                 Get Consultation
               </Button>

@@ -287,10 +287,10 @@ const Index = () => {
               size="lg" 
               variant="outline" 
               className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6 hover-sacred"
-              onClick={() => initiatePhoneCall("+91 620 647 1543")}
+              onClick={() => initiatePhoneCall("+91 8105107271")}
             >
               <Phone className="mr-2 h-5 w-5" />
-              Book Now: +91 987 654 3211
+              Book Now: +91 8105107271
             </Button>
           </div>
         </div>
@@ -385,10 +385,10 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="gradient-sacred-btn hover-sacred text-lg px-8 py-6"
-                onClick={() => initiatePhoneCall("+91 987 654 3211")}
+                onClick={() => initiatePhoneCall("+91 8105107271")}
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Call to Book: +91 987 654 3211
+                Call to Book: +91 8105107271
               </Button>
               <Button 
                 size="lg" 
@@ -482,7 +482,7 @@ const Index = () => {
             <Button 
               className="gradient-sacred-btn hover-sacred" 
               size="lg" 
-              onClick={() => initiatePhoneCall("+91 987 654 3211")}
+              onClick={() => initiatePhoneCall("+91 8105107271")}
             >
               <Phone className="mr-2 h-5 w-5" />
               Book Your Ceremony
@@ -506,10 +506,10 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="gradient-sacred-btn hover-sacred text-lg px-8 py-6"
-                onClick={() => initiatePhoneCall("+91 987 654 3211")}
+                onClick={() => initiatePhoneCall("+91 8105107271")}
               >
                 <Phone className="mr-2 h-5 w-5" />
-                                 Call +91 987 654 3211
+                                 Call +91 8105107271
               </Button>
               <Button 
                 size="lg" 

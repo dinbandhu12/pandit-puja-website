@@ -63,10 +63,10 @@ const Header = () => {
               <p className="text-sm text-muted-foreground">Book Your Puja</p>
               <p 
                 className="text-lg font-bold text-primary cursor-pointer hover:text-primary/80 transition-colors"
-                                 onClick={() => initiatePhoneCall("+91 987 654 3211")}
-                 title="Click to call +91 987 654 3211"
+                                 onClick={() => initiatePhoneCall("+91 8105107271")}
+                 title="Click to call +91 8105107271"
               >
-                                 +91 987 654 3211
+                                 +91 8105107271
               </p>
             </div>
             <Button 
@@ -114,11 +114,11 @@ const Header = () => {
                   className="w-full gradient-sacred-btn text-base py-3"
                   onClick={() => {
                     setIsMenuOpen(false);
-                                         initiatePhoneCall("+91 987 654 3211");
+                                         initiatePhoneCall("+91 8105107271");
                   }}
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                                     Book Puja - +91 987 654 3211
+                                     Book Puja - +91 8105107271
                 </Button>
               </div>
             </div>

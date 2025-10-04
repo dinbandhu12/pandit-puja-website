@@ -31,9 +31,9 @@ const Contact = () => {
       icon: Phone,
       title: "Call Directly",
       description: "Immediate assistance available",
-      action: "Call +91 987 654 3211",
+      action: "Call +91 8105107271",
       variant: "primary",
-      onClick: () => initiatePhoneCall("+91 987 654 3211")
+      onClick: () => initiatePhoneCall("+91 8105107271")
     },
     {
       icon: MessageCircle,
@@ -42,7 +42,7 @@ const Contact = () => {
       action: "Message Now",
       variant: "primary",
       // variant: "secondary",
-      onClick: () => openWhatsAppChat("+91 987 654 3211")
+      onClick: () => openWhatsAppChat("+91 8105107271")
     },
     {
       icon: Calendar,
@@ -50,7 +50,7 @@ const Contact = () => {
       description: "Free spiritual consultation",
       action: "Schedule Meeting",
       variant: "outline",
-      onClick: () => openWhatsAppConsultation("+91 987 654 3211")
+      onClick: () => openWhatsAppConsultation("+91 8105107271")
     }
   ];
 
@@ -123,10 +123,10 @@ const Contact = () => {
                 <CardContent>
                   <p 
                     className="text-2xl font-bold text-foreground mb-2 cursor-pointer hover:text-primary transition-colors"
-                    onClick={() => initiatePhoneCall("+91 987 654 3211")}
-                    title="Click to call +91 987 654 3211"
+                    onClick={() => initiatePhoneCall("+91 8105107271")}
+                    title="Click to call +91 8105107271"
                   >
-                    +91 987 654 3211
+                    +91 8105107271
                   </p>
                   <p className="text-muted-foreground">Available 24/7 for immediate assistance</p>
                   <p className="text-sm text-primary mt-2">Best for urgent bookings and consultations</p>
@@ -142,7 +142,7 @@ const Contact = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg font-semibold text-foreground mb-2">info@divinepuja.com</p>
+                  <p className="text-lg font-semibold text-foreground mb-2">sharmakabhay25@gmail.com</p>
                   <p className="text-muted-foreground">We respond within 24 hours</p>
                   <p className="text-sm text-primary mt-2">Best for detailed ceremony planning</p>
                 </CardContent>
@@ -209,7 +209,7 @@ const Contact = () => {
                 </p>
                 <Button 
                   className="w-full gradient-sacred-btn hover-sacred"
-                  onClick={() => openWhatsAppConsultation("+91 987 654 3211")}
+                  onClick={() => openWhatsAppConsultation("+91 8105107271")}
                 >
                   <Calendar className="w-4 h-4 mr-2" />
                   Schedule Free Consultation
