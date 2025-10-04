@@ -236,28 +236,28 @@ const Services = () => {
   );
 
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={pujaGallery} 
-            alt="Traditional Puja Services" 
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 gradient-divine"></div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/images/services-bg.jpg')` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-sacred/85 via-sacred/75 to-sacred/90"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 gradient-sacred text-white">Our Sacred Services</Badge>
-            <h1 className="text-5xl font-bold text-sacred mb-6">
-              Traditional Hindu Puja Services
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              From joyous celebrations to solemn ceremonies, we provide authentic Hindu rituals 
-              performed with devotion and precision according to ancient Vedic traditions.
-            </p>
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <div className="mb-6">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm">
+              Our Sacred Services
+            </Badge>
           </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
+            Traditional Hindu Puja Services
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-white/95 font-medium">
+            From joyous celebrations to solemn ceremonies, we provide authentic Hindu rituals 
+            performed with devotion and precision according to ancient Vedic traditions.
+          </p>
 
           {/* Search and Filter */}
           <div className="max-w-md mx-auto mb-12">
@@ -297,7 +297,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-r from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           {filteredServices.length === 0 ? (
             <div className="text-center py-12">
@@ -325,7 +325,7 @@ const Services = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 gradient-divine">
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Why Choose Us</Badge>
@@ -378,7 +378,7 @@ const Services = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20">
+      <section className="py-20" style={{backgroundColor: 'hsl(217, 37%, 90%)'}}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-sacred mb-6">

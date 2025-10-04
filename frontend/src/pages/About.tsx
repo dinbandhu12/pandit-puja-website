@@ -90,26 +90,26 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={omSymbol} 
-            alt="Sacred Om Symbol" 
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 gradient-divine"></div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/images/about-bg.jpeg')` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-sacred/85 via-sacred/75 to-sacred/90"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 gradient-sacred text-white">About Us</Badge>
-            <h1 className="text-5xl font-bold text-sacred mb-6">
-              Preserving Sacred Traditions
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              With over 15 years of dedicated service, we are committed to preserving and sharing 
-              the authentic traditions of Hindu dharma through our experienced North Indian Hindi pandits.
-            </p>
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <div className="mb-6">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm">
+              About Us
+            </Badge>
           </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
+            Preserving Sacred Traditions
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-white/95 font-medium">
+            With over 15 years of dedicated service, we are committed to preserving and sharing 
+            the authentic traditions of Hindu dharma through our experienced North Indian Hindi pandits.
+          </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {achievements.map((achievement, index) => (
@@ -126,7 +126,7 @@ const About = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-r from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -185,7 +185,7 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 gradient-divine">
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Our Values</Badge>
@@ -215,7 +215,7 @@ const About = () => {
       </section>
 
       {/* Team Philosophy */}
-      <section className="py-20">
+      <section className="py-20" style={{backgroundColor: 'hsl(217, 37%, 90%)'}}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 gradient-sacred text-white">Our Philosophy</Badge>
@@ -249,7 +249,7 @@ const About = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 gradient-divine">
+      <section className="py-20" style={{backgroundColor: 'hsl(25, 35%, 88%)'}}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <Badge className="mb-4 gradient-sacred text-white">Devotee Experiences</Badge>

@@ -14,6 +14,7 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,14 +35,12 @@ const queryClient = new QueryClient({
 // Separate component for scroll to top that's inside the Router context
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const { scrollToTop } = useSmoothScroll();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'auto'
-    });
-  }, [pathname]);
+    // Use GSAP smooth scroll instead of native scroll
+    scrollToTop(0.8);
+  }, [pathname, scrollToTop]);
 
   return null;
 };

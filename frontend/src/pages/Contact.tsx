@@ -55,28 +55,28 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={omSymbol} 
-            alt="Om Symbol - Divine Connection" 
-            className="w-full h-full object-cover opacity-15"
-          />
-          <div className="absolute inset-0 gradient-divine"></div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/images/contact-bg.jpg')` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-sacred/85 via-sacred/75 to-sacred/90"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 gradient-sacred text-white">Contact Us</Badge>
-            <h1 className="text-5xl font-bold text-sacred mb-6">
-              Connect with Divine Blessings Worldwide
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Bringing authentic Hindu traditions to families across the globe. Whether you're in India or abroad, 
-              our experienced pandits are available 24/7 to guide you through sacred ceremonies both online and offline.
-            </p>
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <div className="mb-6">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm">
+              Contact Us
+            </Badge>
           </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
+            Connect with Divine Blessings Worldwide
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-white/95 font-medium">
+            Bringing authentic Hindu traditions to families across the globe. Whether you're in India or abroad, 
+            our experienced pandits are available 24/7 to guide you through sacred ceremonies both online and offline.
+          </p>
 
           {/* Quick Action Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -103,7 +103,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Information */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-r from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Badge className="mb-4 gradient-sacred text-white">Get in Touch</Badge>
@@ -143,7 +143,7 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg font-semibold text-foreground mb-2">info@divinepuja.com</p>
-                  <p className="text-muted-foreground">We respond within 2 hours</p>
+                  <p className="text-muted-foreground">We respond within 24 hours</p>
                   <p className="text-sm text-primary mt-2">Best for detailed ceremony planning</p>
                 </CardContent>
               </Card>
@@ -158,11 +158,11 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-lg font-semibold text-foreground mb-2">Primary: Bangalore, Karnataka</p>
-                  <p className="text-muted-foreground mb-3">Serving across South India</p>
+                  <p className="text-muted-foreground mb-3">Online services available worldwide</p>
                   <div className="space-y-1 text-sm text-muted-foreground">
                     <p>• Chennai, Hyderabad, Pune, Mumbai</p>
                     <p>• Delhi NCR, Kolkata, Ahmedabad</p>
-                    <p>• Video consultation available nationwide</p>
+                    <p>• Online consultation available worldwide</p>
                   </div>
                 </CardContent>
               </Card>
@@ -221,7 +221,7 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 gradient-divine">
+      <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center">
             <Badge className="mb-4 gradient-sacred text-white">Common Questions</Badge>

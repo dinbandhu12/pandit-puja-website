@@ -4,10 +4,12 @@ import { Button } from "./ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { initiatePhoneCall } from "@/utils/phoneUtils";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { smoothScrollTo } = useSmoothScroll();
 
   const navItems = [
     { name: "Home", path: "/" },
