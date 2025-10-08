@@ -388,7 +388,7 @@ const Blog = () => {
   }
 
   return (
-    <div className="min-h-screen py-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
