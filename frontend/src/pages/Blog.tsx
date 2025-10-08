@@ -390,19 +390,17 @@ const Blog = () => {
   return (
     <div className="min-h-screen py-16">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={spiritualBlog} 
-            alt="Spiritual Knowledge and Wisdom" 
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 gradient-divine"></div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/images/blog-bg.png')` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-sacred/85 via-sacred/75 to-sacred/90"></div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+          <div className="mb-6">
             <div className="flex items-center justify-center space-x-3 mb-4">
-              <Badge className="gradient-sacred text-white">Spiritual Blog</Badge>
+              <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">Spiritual Blog</Badge>
               <Button
                 variant="ghost"
                 size="sm"
@@ -413,14 +411,14 @@ const Blog = () => {
                 Admin
               </Button>
             </div>
-            <h1 className="text-5xl font-bold text-foreground mb-6">
-              Sacred Wisdom & Insights
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Explore the rich traditions of Hindu culture, understand the significance of sacred rituals, 
-              and deepen your spiritual knowledge with our collection of authentic articles.
-            </p>
           </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
+            Sacred Wisdom & Insights
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-white/95 font-medium">
+            Explore the rich traditions of Hindu culture, understand the significance of sacred rituals, 
+            and deepen your spiritual knowledge with our collection of authentic articles.
+          </p>
         </div>
       </section>
 
