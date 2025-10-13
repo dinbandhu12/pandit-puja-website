@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://your-domain.com/</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://your-domain.com/images/hero-temple.jpg</image:loc>
+      <image:title>Traditional Hindu Temple - Puja Services</image:title>
+      <image:caption>Authentic Hindu puja services and spiritual guidance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://your-domain.com/images/om-symbol.jpg</image:loc>
+      <image:title>Sacred Om Symbol</image:title>
+      <image:caption>Divine spiritual symbol representing the essence of the universe</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://your-domain.com/about</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://your-domain.com/images/about-bg.jpeg</image:loc>
+      <image:title>About Our Puja Services</image:title>
+      <image:caption>Learn about our authentic Hindu puja services and experienced pandits</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://your-domain.com/services</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://your-domain.com/images/services-bg.jpg</image:loc>
+      <image:title>Traditional Hindu Puja Services</image:title>
+      <image:caption>Comprehensive range of authentic Hindu puja services and ceremonies</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://your-domain.com/images/Grah-pooja.webp</image:loc>
+      <image:title>Griha Pravesh Puja</image:title>
+      <image:caption>House warming ceremony for new homes</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://your-domain.com/images/Grahpravesh.webp</image:loc>
+      <image:title>Griha Pravesh Ceremony</image:title>
+      <image:caption>Traditional house blessing ceremony</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://your-domain.com/images/Navgrah_pooja.webp</image:loc>
+      <image:title>Navgrah Puja</image:title>
+      <image:caption>Nine planets worship ceremony</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://your-domain.com/images/rudraabhishek.webp</image:loc>
+      <image:title>Rudrabhishek</image:title>
+      <image:caption>Lord Shiva worship ceremony</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://your-domain.com/images/Satyanarayan_pooja.webp</image:loc>
+      <image:title>Satyanarayan Puja</image:title>
+      <image:caption>Lord Vishnu worship ceremony</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://your-domain.com/images/Thadri_blo.webp</image:loc>
+      <image:title>Thadri Puja</image:title>
+      <image:caption>Traditional festival puja ceremony</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog Page -->
+  <url>
+    <loc>https://your-domain.com/blog</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://your-domain.com/images/blog-bg.png</image:loc>
+      <image:title>Spiritual Blog</image:title>
+      <image:caption>Articles about Hindu traditions, puja ceremonies, and spiritual guidance</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://your-domain.com/contact</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://your-domain.com/images/contact-bg.jpg</image:loc>
+      <image:title>Contact Us</image:title>
+      <image:caption>Get in touch with our experienced pandits for puja services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Individual Blog Posts (Sample - these would be dynamically generated) -->
+  <url>
+    <loc>https://your-domain.com/blog/1</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Puja Services Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-19</news:publication_date>
+      <news:title>The Significance of Griha Pravesh Puja: Blessing Your New Home</news:title>
+      <news:keywords>Griha Pravesh, Vastu, Home Blessing, Puja, Hindu Traditions</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/blog/2</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Puja Services Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-19</news:publication_date>
+      <news:title>Understanding the Sacred Marriage Rituals in Hindu Tradition</news:title>
+      <news:keywords>Marriage, Vivah, Saptapadi, Hindu Wedding, Rituals</news:keywords>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/blog/3</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Puja Services Blog</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-19</news:publication_date>
+      <news:title>Ganesh Chaturthi: The Festival of New Beginnings</news:title>
+      <news:keywords>Ganesh, Chaturthi, Festival, Hindu Culture, Lord Ganesha</news:keywords>
+    </news:news>
+  </url>
+
+  <!-- Service-specific URLs (for better SEO targeting) -->
+  <url>
+    <loc>https://your-domain.com/services/online-pooja</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/consultation</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/griha-pravesh</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/mahaganapathi-homa</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/rudrabhishek</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/griha-shanti-havan</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/mahamrityunjay-homa</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/office-business-pooja</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/bhoomi-pooja</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/namkaran</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/nakshatra-shanti</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://your-domain.com/services/durga-saptashati</loc>
+    <lastmod>2024-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
