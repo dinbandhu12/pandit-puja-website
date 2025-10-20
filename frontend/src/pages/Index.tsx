@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Helmet } from "react-helmet-async";
 import TestimonialCard from "@/components/TestimonialCard";
 import HomepageServiceCard from "@/components/HomepageServiceCard";
 import { 
@@ -239,8 +240,90 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Vedokta Pooja Services - Authentic Hindu Pandit Services | Online & Offline</title>
+        <meta name="description" content="Professional Hindu puja services by experienced pandits. Griha Pravesh, Satyanarayan Puja, Rudrabhishek, and more. Available online worldwide and offline in Bangalore. Book now!" />
+        <meta name="keywords" content="Hindu puja services, pandit services, Griha Pravesh, Satyanarayan Puja, Rudrabhishek, online puja, Bangalore pandit, Vedic rituals, spiritual ceremonies" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://your-domain.com/" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Vedokta Pooja Services - Authentic Hindu Pandit Services" />
+        <meta property="og:description" content="Professional Hindu puja services by experienced pandits. Available online worldwide and offline in Bangalore. Book authentic Vedic rituals now!" />
+        <meta property="og:url" content="https://your-domain.com/" />
+        <meta property="og:image" content="https://your-domain.com/images/hero-temple.jpg" />
+        <meta property="og:site_name" content="Vedokta Pooja Services" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Vedokta Pooja Services - Authentic Hindu Pandit Services" />
+        <meta name="twitter:description" content="Professional Hindu puja services by experienced pandits. Available online worldwide and offline in Bangalore." />
+        <meta name="twitter:image" content="https://your-domain.com/images/hero-temple.jpg" />
+        
+        {/* Structured Data - LocalBusiness */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Vedokta Pooja Services",
+            "description": "Professional Hindu puja services by experienced pandits. Authentic Vedic rituals available online worldwide and offline in Bangalore.",
+            "url": "https://your-domain.com",
+            "telephone": "+91-8105107271",
+            "email": "sharmakabhay25@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Bangalore",
+              "addressRegion": "Karnataka",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "12.9716",
+              "longitude": "77.5946"
+            },
+            "openingHours": "Mo-Su 00:00-23:59",
+            "priceRange": "$$",
+            "image": "https://your-domain.com/images/hero-temple.jpg",
+            "logo": "https://your-domain.com/images/logo.png",
+            "sameAs": [
+              "https://your-domain.com"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Hindu Puja Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Griha Pravesh Puja",
+                    "description": "Traditional house warming ceremony"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Satyanarayan Puja",
+                    "description": "Lord Vishnu worship ceremony"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Rudrabhishek",
+                    "description": "Lord Shiva worship ceremony"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
+      </Helmet>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroTemple})` }}
@@ -347,10 +430,14 @@ const Index = () => {
             <div className="relative">
               <img 
                 src={panditPuja} 
-                alt="Hindu Pandit performing puja" 
+                alt="Hindu Pandit performing puja ceremony - Traditional Vedic rituals" 
                 className="rounded-2xl shadow-lg hover-sacred w-full h-[500px] object-cover"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="500"
               />
-              <div className="absolute -bottom-6 -right-6 bg-card rounded-xl p-6 shadow-lg border border-primary/20">
+              <div className="absolute -bottom-6 -right-4 bg-card rounded-xl p-6 shadow-lg border border-primary/20">
                 <Flame className="w-8 h-8 text-primary mb-2" />
                 <p className="font-semibold text-foreground">Sacred Fire Rituals</p>
                 <p className="text-sm text-muted-foreground">Traditional Havan & Homam</p>
@@ -452,10 +539,12 @@ const Index = () => {
               >
                 <img 
                   src={image.src} 
-                  alt={image.category}
+                  alt={`${image.category} ceremony - Hindu puja services`}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                   decoding="async"
+                  width="300"
+                  height="192"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <Eye className="w-8 h-8 text-white" />

@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Helmet } from "react-helmet-async";
 import ServiceCard from "@/components/ServiceCard";
 import { 
   Home, 
@@ -237,8 +238,103 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Hindu Puja Services - Complete List | Griha Pravesh, Rudrabhishek & More</title>
+        <meta name="description" content="Complete list of authentic Hindu puja services: Griha Pravesh, Satyanarayan Puja, Rudrabhishek, Mahaganapathi Homa, Office Pooja, Namkaran, and more. Book experienced pandits." />
+        <meta name="keywords" content="Hindu puja services, Griha Pravesh, Satyanarayan Puja, Rudrabhishek, Mahaganapathi Homa, Office Pooja, Namkaran, Bhoomi Pooja, Durga Saptashati, online puja, offline puja" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://your-domain.com/services" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hindu Puja Services - Complete List | Authentic Vedic Rituals" />
+        <meta property="og:description" content="Complete list of authentic Hindu puja services: Griha Pravesh, Rudrabhishek, Mahaganapathi Homa, and more. Book experienced pandits for all ceremonies." />
+        <meta property="og:url" content="https://your-domain.com/services" />
+        <meta property="og:image" content="https://your-domain.com/images/services-bg.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hindu Puja Services - Complete List" />
+        <meta name="twitter:description" content="Complete list of authentic Hindu puja services: Griha Pravesh, Rudrabhishek, Mahaganapathi Homa, and more." />
+        <meta name="twitter:image" content="https://your-domain.com/images/services-bg.jpg" />
+        
+        {/* Structured Data - Service */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Hindu Puja Services",
+            "description": "Complete range of authentic Hindu puja services including Griha Pravesh, Satyanarayan Puja, Rudrabhishek, and more traditional ceremonies.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Vedokta Pooja Services",
+              "telephone": "+91-8105107271",
+              "email": "sharmakabhay25@gmail.com"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "India"
+            },
+            "serviceType": "Religious Services",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Hindu Puja Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Griha Pravesh Pooja",
+                    "description": "Traditional house warming ceremony to bless your new home"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Satyanarayan Pooja",
+                    "description": "Lord Vishnu worship ceremony for prosperity and peace"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Rudrabhishek",
+                    "description": "Powerful Lord Shiva worship ceremony for health and peace"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Mahaganapathi Homa",
+                    "description": "Sacred fire ritual dedicated to Lord Ganesha for obstacle removal"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Office/Business Pooja",
+                    "description": "Sacred ceremony to bless your business with prosperity and success"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Namkaran Ceremony",
+                    "description": "Sacred naming ceremony for newborns"
+                  }
+                }
+              ]
+            }
+          })}
+        </script>
+      </Helmet>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('/images/services-bg.jpg')` }}
@@ -256,7 +352,7 @@ const Services = () => {
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/95 font-medium">
             From joyous celebrations to solemn ceremonies, we provide authentic Hindu rituals 
-            performed with devotion and precision according to ancient Vedic traditions.
+            performed with devotion and precision according to ancient Vedic traditions. 
           </p>
 
           {/* Search and Filter */}

@@ -22,7 +22,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-sacred border-b border-border">
+    <header className="sticky top-0 z-50 backdrop-blur-sacred border-b border-border bg-background/95" style={{ position: 'sticky', top: 0, transform: 'translateZ(0)' }}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}

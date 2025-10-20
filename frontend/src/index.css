@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile Navigation Fix - Prevent sliding behavior */
+@layer base {
+  html {
+    /* Prevent mobile browser address bar from affecting layout */
+    height: 100%;
+    height: -webkit-fill-available;
+  }
+  
+  body {
+    /* Prevent mobile browser address bar from affecting layout */
+    min-height: 100%;
+    min-height: -webkit-fill-available;
+  }
+  
+  /* Fix for sticky header on mobile */
+  header {
+    /* Force hardware acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    /* Prevent mobile browser from moving the header */
+    position: sticky !important;
+    top: 0 !important;
+    /* Ensure header stays in place */
+    will-change: transform;
+    /* Prevent any movement or sliding */
+    z-index: 9999 !important;
+    /* Force the header to stay in place */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* Additional fix for viewport height issues */
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+}
+
 /* Hindu Puja Services Design System - Spiritual & Divine Theme */
 
 @layer base {

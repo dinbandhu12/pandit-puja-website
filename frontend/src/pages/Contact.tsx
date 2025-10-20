@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Helmet } from "react-helmet-async";
 import { 
   Phone, 
   Mail, 
@@ -56,37 +57,115 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contact Us - Book Hindu Puja Services | Call +91 8105107271</title>
+        <meta name="description" content="Contact Vedokta Pooja Services for authentic Hindu puja ceremonies. Call +91 8105107271 or WhatsApp for immediate assistance. Available 24/7 in Bangalore and worldwide online." />
+        <meta name="keywords" content="contact pandit, book puja services, Hindu priest contact, Bangalore pandit, WhatsApp consultation, phone booking, online puja booking" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://your-domain.com/contact" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us - Book Hindu Puja Services | Call +91 8105107271" />
+        <meta property="og:description" content="Contact Vedokta Pooja Services for authentic Hindu puja ceremonies. Available 24/7 in Bangalore and worldwide online." />
+        <meta property="og:url" content="https://your-domain.com/contact" />
+        <meta property="og:image" content="https://your-domain.com/images/contact-bg.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - Book Hindu Puja Services" />
+        <meta name="twitter:description" content="Contact Vedokta Pooja Services for authentic Hindu puja ceremonies. Available 24/7 in Bangalore and worldwide online." />
+        <meta name="twitter:image" content="https://your-domain.com/images/contact-bg.jpg" />
+        
+        {/* Structured Data - FAQ */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much advance booking is needed?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We recommend booking at least 7 days in advance for regular ceremonies. For weddings and major festivals, 2-3 weeks is ideal. Emergency services available 24/7."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What's included in the service?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Complete puja materials, traditional setup, Sanskrit mantras, ceremony guidance, and blessed prasadam. Travel costs included within city limits."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide services in different languages?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes! Our pandits are fluent in Hindi, Sanskrit, English, and regional languages including Tamil, Telugu, Kannada, and Bengali."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you customize ceremonies for family traditions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely! We respect and incorporate your family's specific traditions while maintaining authentic Vedic procedures. Each ceremony is personalized."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do online puja services work for families abroad?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our online pujas are conducted live via video calls, guiding you through every step. We provide detailed instructions, send blessed materials, and ensure you feel connected to the divine from anywhere in the world."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What time zones do you accommodate for international clients?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We offer flexible scheduling to accommodate different time zones worldwide. Whether you're in the US, UK, Canada, Australia, or anywhere else, we'll find a suitable time for your sacred ceremony."
+                }
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-8 md:py-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('/images/contact-bg.jpg')` }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-sacred/85 via-sacred/75 to-sacred/90"></div>
         </div>
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <div className="mb-6">
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto w-full">
+          <div className="mb-4 md:mb-6">
             <Badge className="mb-4 bg-white/20 text-white border-white/30 backdrop-blur-sm">
               Contact Us
             </Badge>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">
             Connect with Divine Blessings Worldwide
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white/95 font-medium">
-            Bringing authentic Hindu traditions to families across the globe. Whether you're in India or abroad, 
-            our experienced pandits are available 24/7 to guide you through sacred ceremonies both online and offline.
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 text-white/95 font-medium px-2">
+          Connecting families worldwide with genuine Hindu traditions. Our skilled pandits are available 24/7 to perform sacred ceremonies online and offline, whether you are in India or abroad.
           </p>
 
           {/* Quick Action Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
             {quickActions.map((action, index) => (
-              <Card key={index} className="hover-sacred border-primary/20 text-center">
-                <CardContent className="pt-6">
-                  <action.icon className="w-12 h-12 text-primary mx-auto mb-4 animate-sacred-glow" />
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{action.title}</h3>
-                  <p className="text-muted-foreground mb-4">{action.description}</p>
+              <Card key={index} className="hover-sacred border-primary/20 text-center bg-white/95 backdrop-blur-sm">
+                <CardContent className="pt-4 md:pt-6 p-4">
+                  <action.icon className="w-10 h-10 md:w-12 md:h-12 text-primary mx-auto mb-3 md:mb-4 animate-sacred-glow" />
+                  <h3 className="text-base md:text-lg font-semibold text-foreground mb-2">{action.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground mb-3 md:mb-4">{action.description}</p>
                   <Button 
+                    size="sm"
                     className={action.variant === "primary" ? "gradient-sacred-btn hover-sacred" : 
                                action.variant === "secondary" ? "bg-accent hover:bg-accent/80" : 
                                "border-primary text-primary hover:border-om hover:gradient-sacred-btn hover-sacred"}

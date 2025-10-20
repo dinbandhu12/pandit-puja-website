@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Helmet } from "react-helmet-async";
 import { 
   ArrowLeft, 
   Calendar, 
@@ -82,13 +83,16 @@ const BlogPostDetail = () => {
 
     switch (platform) {
       case 'facebook':
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400');
         break;
       case 'twitter':
-        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}&hashtags=HinduPuja,VedicTraditions`, '_blank', 'width=600,height=400');
         break;
       case 'linkedin':
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400');
+        break;
+      case 'whatsapp':
+        window.open(`https://wa.me/?text=${encodeURIComponent(`${title} - ${url}`)}`, '_blank');
         break;
       case 'copy':
         navigator.clipboard.writeText(url);
@@ -118,6 +122,10 @@ const BlogPostDetail = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen py-16 flex items-center justify-center">
+        <Helmet>
+          <title>Loading Article - Vedokta Pooja Services</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
           <p className="text-muted-foreground">Loading post...</p>
@@ -129,6 +137,10 @@ const BlogPostDetail = () => {
   if (!post) {
     return (
       <div className="min-h-screen py-16 flex items-center justify-center">
+        <Helmet>
+          <title>Article Not Found - Vedokta Pooja Services</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Post Not Found</h2>
           <Button onClick={() => navigate('/blog')}>
@@ -142,6 +154,65 @@ const BlogPostDetail = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>{post.title} - Vedokta Pooja Services Blog</title>
+        <meta name="description" content={post.subtitle || `Learn about ${post.title} and its significance in Hindu traditions. Expert insights from our experienced pandits.`} />
+        <meta name="keywords" content={post.tags || 'Hindu traditions, puja ceremonies, spiritual wisdom, Vedic rituals'} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://your-domain.com/blog/${post.id}`} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.subtitle || `Learn about ${post.title} and its significance in Hindu traditions.`} />
+        <meta property="og:url" content={`https://your-domain.com/blog/${post.id}`} />
+        <meta property="og:image" content={post.featured_image || "https://your-domain.com/images/blog-bg.png"} />
+        <meta property="article:published_time" content={post.created_at} />
+        <meta property="article:modified_time" content={post.updated_at} />
+        <meta property="article:author" content="Vedokta Pooja Services" />
+        {post.tags && post.tags.split(',').map((tag, index) => (
+          <meta key={index} property="article:tag" content={tag.trim()} />
+        ))}
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.subtitle || `Learn about ${post.title} and its significance in Hindu traditions.`} />
+        <meta name="twitter:image" content={post.featured_image || "https://your-domain.com/images/blog-bg.png"} />
+        
+        {/* Structured Data - Article */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.subtitle || `Learn about ${post.title} and its significance in Hindu traditions.`,
+            "image": post.featured_image || "https://your-domain.com/images/blog-bg.png",
+            "author": {
+              "@type": "Organization",
+              "name": "Vedokta Pooja Services",
+              "url": "https://your-domain.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Vedokta Pooja Services",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://your-domain.com/images/logo.png"
+              }
+            },
+            "datePublished": post.created_at,
+            "dateModified": post.updated_at,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://your-domain.com/blog/${post.id}`
+            },
+            "keywords": post.tags || "Hindu traditions, puja ceremonies, spiritual wisdom",
+            "articleSection": "Spiritual Blog",
+            "wordCount": post.content ? post.content.replace(/<[^>]*>/g, '').split(' ').length : 0
+          })}
+        </script>
+      </Helmet>
       {/* Hero Section with Featured Image */}
       <div className="relative">
         {/* Featured Image Background */}
@@ -261,6 +332,13 @@ const BlogPostDetail = () => {
                   <Linkedin className="w-4 h-4" />
                 </button>
                 <button
+                  onClick={() => handleShare('whatsapp')}
+                  className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700 transition-colors"
+                  title="Share on WhatsApp"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </button>
+                <button
                   onClick={() => handleShare('copy')}
                   className="w-8 h-8 bg-gray-600 text-white rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
                   title="Copy Link"
@@ -315,7 +393,7 @@ const BlogPostDetail = () => {
                 <Button
                   variant="outline"
                   onClick={() => navigator.clipboard.writeText(window.location.href).then(() => toast.success('Link copied!'))}
-                  className="border-orange-300 text-orange-700 hover:bg-orange-50 px-6 py-3"
+                  className="border-orange-300 text-orange-700 hover:bg-orange-600 hover:text-white hover:border-orange-600 px-6 py-3 transition-colors"
                 >
                   <Share2 className="w-4 h-4 mr-2" />
                   Share This Wisdom

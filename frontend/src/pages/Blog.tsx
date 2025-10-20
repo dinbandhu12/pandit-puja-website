@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import spiritualBlog from "@/assets/spiritual-blog.jpg";
 import { useBlogPosts } from "@/hooks/useBlogPosts";
@@ -389,8 +390,28 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Spiritual Blog - Hindu Traditions & Puja Insights | Vedokta Pooja Services</title>
+        <meta name="description" content="Explore authentic articles about Hindu traditions, puja ceremonies, and spiritual wisdom. Learn about Griha Pravesh, Satyanarayan Puja, Rudrabhishek, and more from our experienced pandits." />
+        <meta name="keywords" content="Hindu blog, spiritual articles, puja traditions, Griha Pravesh, Satyanarayan Puja, Rudrabhishek, Hindu festivals, Vedic wisdom, spiritual guidance" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://your-domain.com/blog" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Spiritual Blog - Hindu Traditions & Puja Insights" />
+        <meta property="og:description" content="Explore authentic articles about Hindu traditions, puja ceremonies, and spiritual wisdom from our experienced pandits." />
+        <meta property="og:url" content="https://your-domain.com/blog" />
+        <meta property="og:image" content="https://your-domain.com/images/blog-bg.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Spiritual Blog - Hindu Traditions & Puja Insights" />
+        <meta name="twitter:description" content="Explore authentic articles about Hindu traditions, puja ceremonies, and spiritual wisdom." />
+        <meta name="twitter:image" content="https://your-domain.com/images/blog-bg.png" />
+      </Helmet>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('/images/blog-bg.png')` }}

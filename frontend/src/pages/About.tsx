@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 import TestimonialCard from "@/components/TestimonialCard";
 import { 
   Award, 
@@ -89,8 +90,28 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>About Us - Vedokta Pooja Services | Experienced Hindu Pandits in Bangalore</title>
+        <meta name="description" content="Learn about Pandit Abhay Kirthikumar Sharma and our 15+ years of authentic Hindu puja services. Family lineage of devoted priests serving Bangalore and worldwide." />
+        <meta name="keywords" content="about pandit, Hindu priest Bangalore, Vedic traditions, family lineage, authentic puja services, experienced pandit, Sanskrit scholar" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://your-domain.com/about" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Us - Vedokta Pooja Services | Experienced Hindu Pandits" />
+        <meta property="og:description" content="Learn about our 15+ years of authentic Hindu puja services and family lineage of devoted priests serving Bangalore and worldwide." />
+        <meta property="og:url" content="https://your-domain.com/about" />
+        <meta property="og:image" content="https://your-domain.com/images/about-bg.jpeg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us - Vedokta Pooja Services" />
+        <meta name="twitter:description" content="Learn about our 15+ years of authentic Hindu puja services and family lineage of devoted priests." />
+        <meta name="twitter:image" content="https://your-domain.com/images/about-bg.jpeg" />
+      </Helmet>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url('/images/about-bg.jpeg')` }}
@@ -171,11 +192,15 @@ const About = () => {
             <div className="relative">
               <img 
                 src={panditPuja} 
-                alt="Traditional Hindu puja ceremony" 
+                alt="Traditional Hindu puja ceremony - Experienced pandit performing Vedic rituals" 
                 className="rounded-2xl shadow-lg hover-sacred w-full h-[600px] object-cover"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="600"
               />
-              <div className="absolute -top-6 -right-6 bg-card rounded-xl p-6 shadow-lg border border-primary/20">
-                <img src={omSymbol} alt="Om Symbol" className="w-16 h-16 rounded-full mb-3" />
+              <div className="absolute -top-6 -right-4 bg-card rounded-xl p-6 shadow-lg border border-primary/20">
+                <img src={omSymbol} alt="Sacred Om Symbol - Divine spiritual symbol" className="w-16 h-16 rounded-full mb-3" loading="lazy" decoding="async" width="64" height="64" />
                 <p className="font-semibold text-foreground">Sacred Traditions</p>
                 <p className="text-sm text-muted-foreground">Since 2008</p>
               </div>
