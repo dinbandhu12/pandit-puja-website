@@ -217,7 +217,7 @@ const BlogPostDetail = () => {
       <div className="relative">
         {/* Featured Image Background */}
         {post.featured_image ? (
-          <div className="relative h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] min-h-[500px] sm:min-h-[550px] md:min-h-[600px] bg-gray-900">
+          <div className="relative h-[80vh] sm:h-[85vh] md:h-[90vh] lg:h-[95vh] min-h-[700px] sm:min-h-[750px] md:min-h-[800px] bg-gray-900">
             <img 
               src={post.featured_image} 
               alt={post.title}
@@ -226,15 +226,15 @@ const BlogPostDetail = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
           </div>
         ) : (
-          <div className="relative h-[60vh] sm:h-[65vh] md:h-[70vh] min-h-[450px] sm:min-h-[500px] md:min-h-[550px] bg-gradient-to-r from-orange-600 via-red-600 to-pink-600">
+          <div className="relative h-[80vh] sm:h-[85vh] md:h-[90vh] min-h-[700px] sm:min-h-[750px] md:min-h-[800px] bg-gradient-to-r from-orange-600 via-red-600 to-pink-600">
             <div className="absolute inset-0 bg-black/20"></div>
           </div>
         )}
 
         {/* Content Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-between text-white">
+        <div className="absolute inset-0 flex flex-col text-white">
           {/* Back Button */}
-          <div className="container mx-auto px-4 pt-8">
+          <div className="container mx-auto px-4 pt-8 pb-4">
             <Button
               variant="ghost"
               onClick={() => navigate('/blog')}
@@ -245,35 +245,40 @@ const BlogPostDetail = () => {
             </Button>
           </div>
 
-          {/* Post Header */}
-          <div className="container mx-auto px-4 pb-20">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight drop-shadow-lg">
-                {post.title}
-              </h1>
-              {post.subtitle && (
-                <p className="text-xl md:text-2xl lg:text-3xl text-gray-100 mb-10 leading-relaxed drop-shadow-md max-w-5xl mx-auto">
-                  {post.subtitle}
-                </p>
-              )}
-              
-              {/* Meta Info */}
-              <div className="flex flex-wrap items-center justify-center gap-6 text-gray-200 backdrop-blur-sm bg-black/20 rounded-full px-8 py-4 inline-flex">
-                <span className="flex items-center">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {formatDate(post.created_at)}
-                </span>
-                <span className="flex items-center">
-                  <Eye className="w-4 h-4 mr-2" />
-                  {Math.floor(Math.random() * 1000) + 100} reads
-                </span>
-                <span className="flex items-center">
-                  <Heart className="w-4 h-4 mr-2" />
-                  {Math.floor(Math.random() * 100) + 20} likes
-                </span>
+          {/* Post Header - Centered */}
+          <div className="flex-1 flex items-center justify-center">
+            <div className="container mx-auto px-4">
+              <div className="max-w-5xl mx-auto text-center">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight drop-shadow-lg">
+                  {post.title}
+                </h1>
+                {post.subtitle && (
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-100 mb-8 sm:mb-10 leading-relaxed drop-shadow-md max-w-4xl mx-auto px-4">
+                    {post.subtitle}
+                  </p>
+                )}
+                
+                {/* Meta Info */}
+                <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-gray-200 backdrop-blur-sm bg-black/20 rounded-full px-6 sm:px-8 py-3 sm:py-4">
+                  <span className="flex items-center text-sm sm:text-base">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {formatDate(post.created_at)}
+                  </span>
+                  <span className="flex items-center text-sm sm:text-base">
+                    <Eye className="w-4 h-4 mr-2" />
+                    {Math.floor(Math.random() * 1000) + 100} reads
+                  </span>
+                  <span className="flex items-center text-sm sm:text-base">
+                    <Heart className="w-4 h-4 mr-2" />
+                    {Math.floor(Math.random() * 100) + 20} likes
+                  </span>
+                </div>
               </div>
             </div>
           </div>
+
+          {/* Bottom spacing */}
+          <div className="pb-8 sm:pb-12 md:pb-16"></div>
         </div>
       </div>
 
